@@ -60,6 +60,7 @@
 }
 body{
 	font-family: 'Source Sans Pro', sans-serif;
+	background-image: linear-gradient(to bottom, #282828, #404040);
 }
 .rainbowtext{
 	    background: red;
@@ -70,4 +71,3 @@ body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.backgroundanim{background: linear-gradient(302deg, #909090, #000000);background-size: 10000% 10000%;-webkit-animation: backgroundanim 44s ease infinite;-moz-animation: backgroundanim 44s ease infinite;-o-animation: backgroundanim 44s ease infinite;animation: backgroundanim 44s ease infinite;@-webkit-keyframes backgroundanim {0%{background-position:11% 0%}50%{background-position:90% 100%}100%{background-position:11% 0%}}@-moz-keyframes backgroundanim {0%{background-position:11% 0%}50%{background-position:90% 100%}100%{background-position:11% 0%}}@-o-keyframes backgroundanim {0%{background-position:11% 0%}50%{background-position:90% 100%}100%{background-position:11% 0%}}@keyframes backgroundanim { 0%{background-position:11% 0%}50%{background-position:90% 100%}100%{background-position:11% 0%}}}
