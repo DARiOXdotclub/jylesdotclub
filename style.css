@@ -60,7 +60,7 @@
 }
 body{
 	font-family: 'Source Sans Pro', sans-serif;
-	background-image: linear-gradient(to bottom, #282828, #404040);
+	background: linear-gradient(to bottom, #282828, #404040);
 }
 .rainbowtext{
 	    background: red;
