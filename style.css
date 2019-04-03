@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+.titlecustom{
+  	font-family: 'PT Serif', serif;
+	font-size: 72px;
+	font-weight: 300;
+}
+.slide-in-top{-webkit-animation:slide-in-top 1.5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-top 2s cubic-bezier(.25,.46,.45,.94) both}
+@-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
+.fade-in-fwd{-webkit-animation:fade-in-fwd 1.5s cubic-bezier(.39,.575,.565,1.000) 2s both;animation:fade-in-fwd 1.5s cubic-bezier(.39,.575,.565,1.000) 2s both}
+@-webkit-keyframes fade-in-fwd{0%{-webkit-transform:translateZ(-80px);transform:translateZ(-80px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes fade-in-fwd{0%{-webkit-transform:translateZ(-80px);transform:translateZ(-80px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
+.music{
+	border-left: 3px white solid;
+	border-right: 3px white solid;
+	padding:2px;
+	position: absolute;
+	left: calc(50% - 125px);
+	bottom: 50px;
+	width:250px;
+	text-align:center;
+}
+.subtitle{
+	font-size:26px;
+}
+.links a{
+	color:#007bff;
+	text-decoration:none;
+	font-size:18px;
+	font-family: 'Source Sans Pro', sans-serif;
+	position:absolute;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+}
+.links a:hover{
+	color:white;
+	text-decoration:none;
+	font-size:18px;
+	font-family: 'Source Sans Pro', sans-serif;
+	position:absolute;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	font-weight:bold;
+}
+.song a{
+	color:#007bff;
+	text-decoration:none;
+	font-size:18px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.song a:hover{
+	color:#f5f5f5;
+	text-decoration:none;
+	font-size:18px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight:bold;
+}
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.rainbowtext{
+	    background: red;
+    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.backgroundanim{background: linear-gradient(302deg, #909090, #000000);background-size: 10000% 10000%;-webkit-animation: backgroundanim 44s ease infinite;-moz-animation: backgroundanim 44s ease infinite;-o-animation: backgroundanim 44s ease infinite;animation: backgroundanim 44s ease infinite;@-webkit-keyframes backgroundanim {0%{background-position:11% 0%}50%{background-position:90% 100%}100%{background-position:11% 0%}}@-moz-keyframes backgroundanim {0%{background-position:11% 0%}50%{background-position:90% 100%}100%{background-position:11% 0%}}@-o-keyframes backgroundanim {0%{background-position:11% 0%}50%{background-position:90% 100%}100%{background-position:11% 0%}}@keyframes backgroundanim { 0%{background-position:11% 0%}50%{background-position:90% 100%}100%{background-position:11% 0%}}}
