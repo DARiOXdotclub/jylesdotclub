@@ -52,6 +52,9 @@
     elseif ($page == "dariox") {
         header("Location: http://dariox.club");
     }
+    elseif ($page == "donate") {
+        header("Location: https://paypal.me/darioxservices");
+    }
     else {
         header("Location: {$_SERVER['HTTP_REFERER']}");
     }
