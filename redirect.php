@@ -7,6 +7,7 @@
  */
 
     $page=$_GET['page'];
+    $type=$_GET['type'];
     if ($page == "home"){
         header("Location: http://jyles.club");
     }
