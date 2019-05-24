@@ -35,6 +35,9 @@
     elseif ($page == "twitter") {
         echo `<h1>My twitter is locked, please tweet to twitter to unlock my account (@jylescoadward)</h1>`;
     }
+    elseif ($page == "twitch") {
+        header("Location: http://twitch.tv/seedplaysgames");
+    }
     elseif ($page == "osu") {
         if ($type == "profile") {
             header("Location: https://osu.ppy.sh/u/seedplaysgames");
