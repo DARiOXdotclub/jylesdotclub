@@ -46,6 +46,9 @@
             header("Location: {$_SERVER['HTTP_REFERER']}");
         }
     }
+    elseif ($page == "dariox") {
+        header("Location: http://dariox.club");
+    }
     else {
         header("Location: {$_SERVER['HTTP_REFERER']}");
     }
