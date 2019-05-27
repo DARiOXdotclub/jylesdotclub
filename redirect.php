@@ -79,7 +79,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     $logWriteDestination = $writeDirectory."/".$logFileName;
     $log = fopen($logWriteDestination, a);
     $writeToLogDestination = "Destination: ".$page."\n";
-    $writeToLogType = "Type: ".$type."\n";
+    $writeToLogType;
     $writeToLogIP = "IP Address: ".$_SERVER['REMOTE_ADDR']."\n";
     $writeToLogUserAgent = "User Agent: ".$_SERVER['HTTP_USER_AGENT']."\n";
     $writeToLogReferer = "HTTP Referer: ".$_SERVER['HTTP_REFERER']."\n";
@@ -87,9 +87,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     $writeToLogHostname = "Hostname: ".$_SERVER['REMOTE_HOST']."\n";
     $writeToLogCountry = "Country: ".ip_info($_SERVER['REMOTE_ADDR'], "countrycode")."\n";
     $writeToLogTime = "Time Accessed: ".date('l j \of F Y h;i:s A')."\n";
-    $writeToLog = $writeToLogDestination.$writeToLogType.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
-    fwrite($log, $writeToLog);
-    fclose($log);
+    
 
 
     if ($page == "home"){
@@ -125,9 +123,11 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     elseif ($page == "osu") {
         if ($type == "profile") {
             header("Location: https://osu.ppy.sh/u/seedplaysgames");
+			$writeToLogType = "Type: ".$type."\n";
         }
         elseif ($type == "skin") {
             header("Location: https://storage.googleapis.com/dariox/share/osu-skin/latest.osk");
+			$writeToLogType = "Type: ".$type."\n";
         }
         else{
             header("Location: {$_SERVER['HTTP_REFERER']}");
@@ -142,5 +142,9 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     else {
         header("Location: {$_SERVER['HTTP_REFERER']}");
     }
+	
+	$writeToLog = $writeToLogDestination.$writeToLogType.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
+    fwrite($log, $writeToLog);
+    fclose($log);
 
 ?>
