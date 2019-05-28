@@ -85,7 +85,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     $writeToLogReferer = "HTTP Referer: ".$_SERVER['HTTP_REFERER']."\n";
     $writeToLogRemotePort = "Remote Port: ".$_SERVER['REMOTE_PORT']."\n";
     $writeToLogHostname = "Hostname: ".$_SERVER['REMOTE_HOST']."\n";
-    $writeToLogCountry = "Country: ".ip_info($_SERVER['REMOTE_ADDR'], "countrycode")."\n";
+    $writeToLogCountry = "Country: ".ip_info($_SERVER['REMOTE_ADDR'], "country")."\n";
     $writeToLogTime = "Time Accessed: ".date('l j \of F Y h;i:s A')."\n";
     
 
