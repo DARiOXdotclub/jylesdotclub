@@ -139,6 +139,9 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     elseif ($page == "donate") {
         header("Location: https://paypal.me/darioxservices");
     }
+    elseif ($page == "soundcloud") {
+	header("Location: https://soundcloud.com/jyles-coad-ward/");
+    }
     else {
         header("Location: {$_SERVER['HTTP_REFERER']}");
     }
