@@ -106,7 +106,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
         header("Location: https://paypal.me/darioxservices");
     }
     elseif ($page == "steam"){
-        header("Location: https://steamcommunity.com/id/seed-main");
+        header("Location: https://steamcommunity.com/id/seed_main");
     }
     elseif ($page == "github"){
         header("Location: https://github.com/jylescoad-ward");
