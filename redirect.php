@@ -88,6 +88,9 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     $writeToLogCountry = "Country: ".ip_info($_SERVER['REMOTE_ADDR'], "country")."\n";
     $writeToLogTime = "Time Accessed: ".date('l j \of F Y h;i:s A')."\n";
     
+    function gtfo() {
+        header("Location: ".$_SERVER['HTTP_REFERER']);
+    }
 
 
     if ($page == "home"){
@@ -130,7 +133,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
 			$writeToLogType = "Type: ".$type."\n";
         }
         else{
-            header("Location: {$_SERVER['HTTP_REFERER']}");
+            gtfo();
         }
     }
     elseif ($page == "dariox") {
@@ -142,8 +145,19 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     elseif ($page == "soundcloud") {
 	header("Location: https://soundcloud.com/jyles-coad-ward/");
     }
+    elseif ($page == "live"){
+        if ($type == "twitch"){
+            header("Location: http://twitch.tv/seedplaysgames");
+        }
+        elseif ($type == "youtube"){
+            header("Location: http://youtube.com/seedvevo/live");
+        }
+        else {
+            gtfo();
+        }
+    }
     else {
-        header("Location: {$_SERVER['HTTP_REFERER']}");
+        gtfo();
     }
 	
 	$writeToLog = $writeToLogDestination.$writeToLogType.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
