@@ -162,7 +162,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
 	
 	$writeToLog = $writeToLogDestination.$writeToLogType.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
 
-    if (strpos($writeToLogUserAgent, 'CloudFlare-AlwaysOnline') !== false) {
+    if (strpos($writeToLogUserAgent, 'CloudFlare-AlwaysOnline') !== true) {
         fwrite($log, $writeToLog);
         fclose($log);
     }
