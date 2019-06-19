@@ -156,6 +156,9 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
             gtfo();
         }
     }
+    elseif ($page == "darioxmediadownload") {
+        header("Location: https://github.com/DARiOXdotclub/media-app/releases");
+    }
     else {
         gtfo();
     }
