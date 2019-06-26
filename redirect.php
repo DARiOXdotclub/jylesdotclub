@@ -159,6 +159,9 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     elseif ($page == "darioxmediadownload") {
         header("Location: https://github.com/DARiOXdotclub/media-app/releases");
     }
+    elseif ($page == "darioxmediaregister") {
+	header("Location: http://media.dariox.club/register.php");    
+    }
     else {
         gtfo();
     }
