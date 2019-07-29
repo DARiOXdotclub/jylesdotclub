@@ -100,10 +100,10 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
         header("Location: https://discord.gg/x92bvet");
     }
     elseif ($page == "seedbot"){
-        header("Location: http://jyles.club/seedbot");
+        header("Location: http://seedbot.jyles.club");
     }
     elseif ($page == "seedbotinvite"){
-        header("Location: http://jyles.club/seedbot/invite");
+        header("Location: http://seedbot.jyles.club/invite");
     }
     elseif ($page == "donate"){
         header("Location: https://paypal.me/darioxservices");
@@ -118,7 +118,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
         header("Location: https://youtube.com/seedvevo");
     }
     elseif ($page == "twitter") {
-        echo `<h1>My twitter is locked, please tweet to twitter to unlock my account (@jylescoadward)</h1>`;
+        header("Location: https://twitter.com/jylescoadward");
     }
     elseif ($page == "twitch") {
         header("Location: http://twitch.tv/seedplaysgames");
