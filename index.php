@@ -151,7 +151,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
         echo "Hello CloudFlare!";
     }
 
-    
+
 
 ?>
 <!DOCTYPE html>
@@ -170,6 +170,11 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
 
     <link href="style.css" rel="stylesheet">
     
+<script type='text/javascript'>
+if (window.location.href.substr(-2) !== '?r') {
+    window.location = window.location.href + '?r';
+}
+</script>
 
     <style>
 body{
