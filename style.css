@@ -22,27 +22,17 @@
 .subtitle{
 	font-size:26px;
 }
-.links a{
+td a{
 	color:#007bff;
 	text-decoration:none;
-	font-size:18px;
+	font-size:20px;
 	font-family: 'Source Sans Pro', sans-serif;
-	position:absolute;
-	left:0;
-	right:0;
-	margin-left:auto;
-	margin-right:auto;
 }
-.links a:hover{
+td a:hover{
 	color:white;
 	text-decoration:none;
-	font-size:18px;
+	font-size:20px;
 	font-family: 'Source Sans Pro', sans-serif;
-	position:absolute;
-	left:0;
-	right:0;
-	margin-left:auto;
-	margin-right:auto;
 	font-weight:bold;
 }
 .song a{
@@ -62,12 +52,13 @@ body{
 	font-family: 'Source Sans Pro', sans-serif;
 	background: linear-gradient(to bottom, #282828, #404040);
 }
-.rainbowtext{
-	    background: red;
-    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
-    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
-    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
-    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.table-links{
+	margin-left: calc(50% - 200px);
+	margin-right: calc(50% - 200px);
+}
+td{
+	width:2000px;
+}
+table{
+	width:400px;
 }

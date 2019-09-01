@@ -82,8 +82,6 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     $writeToLogType;
     $writeToLogIP = "IP Address: ".$_SERVER['REMOTE_ADDR']."\n";
     $writeToLogUserAgent = "User Agent: ".$_SERVER['HTTP_USER_AGENT']."\n";
-    $writeToLogReferer = "HTTP Referer: ".$_SERVER['HTTP_REFERER']."\n";
-    $writeToLogRemotePort = "Remote Port: ".$_SERVER['REMOTE_PORT']."\n";
     $writeToLogHostname = "Hostname: ".$_SERVER['REMOTE_HOST']."\n";
     $writeToLogCountry = "Country: ".ip_info($_SERVER['REMOTE_ADDR'], "country")."\n";
     $writeToLogTime = "Time Accessed: ".date('l j \of F Y h;i:s A')."\n";
@@ -93,10 +91,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     }
 
 
-    if ($page == "home"){
-        header("Location: http://jyles.club");
-    }
-    elseif ($page == "discord"){
+    if ($page == "discord"){
         header("Location: https://discord.gg/x92bvet");
     }
     elseif ($page == "seedbot"){
@@ -126,11 +121,11 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     elseif ($page == "osu") {
         if ($type == "profile") {
             header("Location: https://osu.ppy.sh/u/seedplaysgames");
-			$writeToLogType = "Type: ".$type."\n";
+      $writeToLogType = "Type: ".$type."\n";
         }
         elseif ($type == "skin") {
             header("Location: https://storage.googleapis.com/dariox/share/osu-skin/latest.osk");
-			$writeToLogType = "Type: ".$type."\n";
+      $writeToLogType = "Type: ".$type."\n";
         }
         else{
             gtfo();
@@ -143,30 +138,10 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
         header("Location: https://paypal.me/darioxservices");
     }
     elseif ($page == "soundcloud") {
-	header("Location: https://soundcloud.com/jyles-coad-ward/");
+     header("Location: https://soundcloud.com/jyles-coad-ward/");
     }
-    elseif ($page == "live"){
-        if ($type == "twitch"){
-            header("Location: http://twitch.tv/seedplaysgames");
-        }
-        elseif ($type == "youtube"){
-            header("Location: http://youtube.com/seedvevo/live");
-        }
-        else {
-            gtfo();
-        }
-    }
-    elseif ($page == "darioxmediadownload") {
-        header("Location: https://github.com/DARiOXdotclub/media-app/releases");
-    }
-    elseif ($page == "darioxmediaregister") {
-	header("Location: http://media.dariox.club/register.php");    
-    }
-    else {
-        gtfo();
-    }
-	
-	$writeToLog = $writeToLogDestination.$writeToLogType.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
+  
+  $writeToLog = $writeToLogDestination.$writeToLogType.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
 
     if (strpos($writeToLogUserAgent, 'CloudFlare-AlwaysOnline') !== true) {
         fwrite($log, $writeToLog);
@@ -176,4 +151,136 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
         echo "Hello CloudFlare!";
     }
 
+    
+
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Jyles Coad-Ward [dariox.club@gmail.com]">
+    <meta name="description" content="A personal website made by Jyles Coad-Ward, an Australian software developer.">
+
+    <title>
+      jyles.club
+    </title>
+
+    <link href="style.css" rel="stylesheet">
+    
+
+    <style>
+body{
+  background: #161616;
+  color:white;
+  height: 100%;
+  .gradientBackground{
+    background: center center no-repeat, linear-gradient(to bottom, #636363, #333333);
+    height: 100%;
+  }
+}
+.border{
+  position: absolute;
+  width: calc(100% - 20px); 
+  height: calc(100% - 20px);
+  top:5px;
+  left:5px;
+  right:5px;
+  margin-left:auto;
+  margin-right:auto;
+  border: rgba(255,255,255,0.8) 5px solid;
+}
+.contentt{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+.donate{
+	position: absolute;
+	bottom: 20px;
+	left: 25px;
+}
+    </style>
+
+  </head>
+
+  <body class="backgroundanim" id="body">
+    <div class="border"></div>
+    <center>
+      <!-- Page Content -->
+      <div class="container contentt">
+        <div class="row">
+          <div class="col-lg-12 text-center"><br><br><br><br>
+            <h1 class="mt-5 titlecustom slide-in-top" id="title">
+              jyles.club
+            </h1>
+            <p class="lead fade-in-fwd subtitle">
+              new song hello?
+            </p><br><br>
+            <table class="table-links fade-in-fwd">
+              <tr>
+                <td>
+                  <a href="http://jyles.club/?page=github" rel="external follow">Github</a>
+                </td>
+                <td>
+                  <a href="http://jyles.club/?page=steam" rel="external nofollow">Steam</a>
+                </td>
+                <td>
+                  <a href="http://jyles.club/?page=discord" rel="external follow">Discord</a>
+                </td>
+                <td>
+                  <a href="http://jyles.club/?page=seedbot" rel="external follow">SeedBot</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://jyles.club/?page=live&type=twitch" rel="external follow">Twitch</a>
+                </td>
+                <td>
+                  <a href="http://jyles.club/?page=osu&type=skin" rel="external follow" style="color: #ffc1ef;" download>osu! skin</a>
+                </td>
+                <td>
+                  <a href="http://jyles.club/?page=osu&type=profile" rel="external follow" style="color: #ffc1ef;">osu! profile</a>
+                </td>
+                <td>
+                  <a href="http://jyles.club/?page=youtube" rel="external follow">Youtube</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </center>
+
+    <center class="song" >
+    <marquee class="music fade-in-fwd" width="250px" direction="left" scrollamount="3" behavior="scroll">
+      Currently Playing:  <a href="https://soundcloud.com/lofi-fpv/quok-atariwave-instrumental?in=jylescoad-ward/sets/good-music"> Atariwave [Insturemntal] </a>  by Quok</a></marquee>
+    </center>
+  </body>
+  <iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="https://storage.googleapis.com/file-asia/cdn/atariwave-quok.mp3" height="0" width="0"></iframe>
+<div class="donate">
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick" />
+    <input type="hidden" name="hosted_button_id" value="X8MN67VEWTLN8" />
+    <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+    <img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1" />
+  </form>
+</div>
+</html>
+<script src="index.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162061-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-77162061-4');
+</script>
+
