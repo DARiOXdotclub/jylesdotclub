@@ -280,7 +280,7 @@ body{
       Currently Playing:  <a href="https://soundcloud.com/lofi-fpv/quok-atariwave-instrumental?in=jylescoad-ward/sets/good-music"> Atariwave [Insturemntal] </a>  by Quok</a></marquee>
     </center>
   </body>
-  <iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="https://storage.googleapis.com/file-asia/cdn/atariwave-quok.mp3" height="0" width="0"></iframe>
+  <iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="https://storage.googleapis.com/file-asia/cdn/atariwave-quok.mp3" allow="autoplay" height="0" width="0"></iframe>
 <div class="donate">
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
     <input type="hidden" name="cmd" value="_s-xclick" />
