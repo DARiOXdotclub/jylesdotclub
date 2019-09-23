@@ -22,6 +22,17 @@
 .subtitle{
 	font-size:26px;
 }
+a{
+	color: #007bff;
+	text-decoraion:none;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+a:hover{
+	color:white;
+	text-decoration:none;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight:bold;
+}
 td a{
 	color:#007bff;
 	text-decoration:none;
