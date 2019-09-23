@@ -238,7 +238,7 @@ body{
               jyles.club
             </h1>
             <p class="lead fade-in-fwd subtitle">
-		    <sup>new</sup>a8764@cumallover.me<sup>email</sup>
+		    <a href="mailto:a8764@cumallover.me"><sup>do</sup>you<sup>like</sup>my<sub>new</sub>email?</a>
             </p><br><br>
             <table class="table-links fade-in-fwd">
               <tr>
