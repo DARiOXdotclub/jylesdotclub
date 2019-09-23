@@ -238,7 +238,7 @@ body{
               jyles.club
             </h1>
             <p class="lead fade-in-fwd subtitle">
-              new song hello?
+		    <sup>new</sup>a8764@cumallover.me<sup>email</sup>
             </p><br><br>
             <table class="table-links fade-in-fwd">
               <tr>
