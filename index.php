@@ -74,17 +74,13 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     $type=$_GET['type'];
 
  /* Log users */
-    $writeDirectory = "/var/www/dxcdn/log";
-    $logFileName = "jylesclub.txt";
-    $logWriteDestination = $writeDirectory."/".$logFileName;
-    $log = fopen($logWriteDestination, a);
-    $writeToLogDestination = "Destination: ".$page."\n";
-    $writeToLogType;
-    $writeToLogIP = "IP Address: ".$_SERVER['REMOTE_ADDR']."\n";
-    $writeToLogUserAgent = "User Agent: ".$_SERVER['HTTP_USER_AGENT']."\n";
-    $writeToLogHostname = "Hostname: ".$_SERVER['REMOTE_HOST']."\n";
-    $writeToLogCountry = "Country: ".ip_info($_SERVER['REMOTE_ADDR'], "country")."\n";
-    $writeToLogTime = "Time Accessed: ".date('l j \of F Y h;i:s A')."\n";
+    $writeToLogDestination = $page;
+    $writeToLogIP = $_SERVER['REMOTE_ADDR'];
+    $writeToLogUserAgent = $_SERVER['HTTP_USER_AGENT'];
+    $writeToLogHostname = $_SERVER['REMOTE_HOST'];
+    $writeToLogCountry = ip_info($_SERVER['REMOTE_ADDR'], "country");
+    $writeToLogTime = date('l j \of F Y h;i:s A')
+    $writeToLogISP = geoip_isp_by_name($_SERVER['REMOTE_HOST']);
     
     function gtfo() {
         header("Location: ".$_SERVER['HTTP_REFERER']);
@@ -140,17 +136,17 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     elseif ($page == "soundcloud") {
      header("Location: https://soundcloud.com/jyles-coad-ward/");
     }
-  
-  $writeToLog = $writeToLogDestination.$writeToLogType.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
 
-    if (strpos($writeToLogUserAgent, 'CloudFlare-AlwaysOnline') !== true) {
-        fwrite($log, $writeToLog);
-        fclose($log);
-    }
-    else {
-        echo "Hello CloudFlare!";
-    }
 
+    $servername = "localhost";
+    $username = "jylesdotcl";
+    $password = "password";
+    $dbname = "ipdata";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $sql = "INSERT INTO jylesdotclub (dest, ip, useragent, time, country, isp) VALUES ('".$writeToLogDestination."', '".$writeToLogIP."', '".$writeToLogUserAgent."', '".$writeToLogTime."', '".$writeToLogCountry."', '".$writeToLogISP."')";
 
 
 ?>
