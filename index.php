@@ -93,30 +93,39 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
 
     if ($page == "discord"){
         header("Location: https://discord.gg/x92bvet");
+	$writeToLogType = "N/A";
     }
     elseif ($page == "seedbot"){
-        header("Location: http://seedbot.jyles.club");
+        header("Location: http://seedbot.xyz");
+	$writeToLogType = "N/A";
     }
     elseif ($page == "seedbotinvite"){
-        header("Location: http://seedbot.jyles.club/invite");
+        header("Location: http://seedbot.xyz?invite");
+	$writeToLogType = "N/A";
     }
     elseif ($page == "donate"){
         header("Location: https://paypal.me/darioxservices");
+	$writeToLogType = "N/A";
     }
     elseif ($page == "steam"){
         header("Location: https://steamcommunity.com/id/seed_main");
+	$writeToLogType = "N/A";
     }
     elseif ($page == "github"){
         header("Location: https://github.com/jylescoad-ward");
+	$writeToLogType = "N/A";
     }
     elseif ($page == "youtube"){
         header("Location: https://youtube.com/seedvevo");
+	$writeToLogType = "N/A";
     }
     elseif ($page == "twitter") {
         header("Location: https://twitter.com/jylescoadward");
+	$writeToLogType = "N/A";
     }
     elseif ($page == "twitch") {
         header("Location: http://twitch.tv/seedplaysgames");
+	$writeToLogType = "N/A";
     }
     elseif ($page == "osu") {
         if ($type == "profile") {
@@ -238,7 +247,7 @@ body{
               jyles.club
             </h1>
             <p class="lead fade-in-fwd subtitle">
-		    <a href="mailto:a8764@cumallover.me"><sup>do</sup>you<sup>like</sup>my<sub>new</sub>email?</a>
+		    life is a bruh sound effect
             </p><br><br>
             <table class="table-links fade-in-fwd">
               <tr>
