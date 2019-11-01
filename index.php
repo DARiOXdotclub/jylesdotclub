@@ -5,6 +5,9 @@
  * Date: 24/05/2019
  * Time: 5:53 PM
  */
+
+var_dump($_GET);
+
 function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     $output = NULL;
     if (filter_var($ip, FILTER_VALIDATE_IP) === FALSE) {
@@ -89,62 +92,67 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     $destJSON = json_decode(file_get_contents("./dest.json"));
 
     function destJSONRedirect($args) {
-        return header("Location: ".$destJSON->args);
+      echo $destJSON->{$args};
+        header("Location: ".$destJSON->$args);
     } 
 
+    header("Location".$destJSON->{'discord'});
+    echo $destJSON->discord[0];
+
         if (isset($_GET["discord"])){
-            destJSONRedirect([$page]);
+            header("Location: ".$destJSON->discord[0]);
             $writeToLogType = "N/A"; 
             $destination = "Discord";
         } elseif (isset($_GET["seedbot"])){
-            destJSONRedirect([$page]);
+            header("Location: ".$destJSON->seedbot[0]);
             $writeToLogType = "N/A";
             $destination = "SeedBot";
         } elseif (isset($_GET["donate"])){
-            destJSONRedirect([$page]);
+            header("Location: ".$destJSON->donate[0]);
             $writeToLogType = "N/A";
             $destination = "Paypal Donate";
         } elseif (isset($_GET["steam"])){
-            destJSONRedirect([$page]);
+            header("Location: ".$destJSON->steam[0]);
             $writeToLogType = "N/A";
             $destination = "Steam";
         } elseif (isset($_GET["github"])){
-            destJSONRedirect([$page]);
+            header("Location: ".$destJSON->github[0]);
             $writeToLogType = "N/A";
             $destination = "Github";
         } elseif (isset($_GET["youtube"])){
-            destJSONRedirect([$page]);
+            header("Location: ".$destJSON->youtube[0]);
             $writeToLogType = "N/A";
             $destination = "Youtube";
         } elseif (isset($_GET["twitter"])){
-            destJSONRedirect([$page]);
+            header("Location: ".$destJSON->twitter[0]);
             $writeToLogType = "N/A";
             $destination = "Twitter";
         } elseif (isset($_GET["twitch"])){
-            destJSONRedirect([$page]);
+            header("Location: ".$destJSON->twitch[0]);
             $writeToLogType = "N/A";
             $destination = "Twitch";
         } elseif (isset($_GET["osu"])){
-            if ($_GET["osu"] = "skin"){
-                destJSONRedirect(["osu[1]"]);
+            if ($_GET["osu"] == "skin"){
+                header("Location: ".$destJSON->osu[1]);
                 $destination = "osu! Skin";
             } else {
-                destJSONRedirect(["osu[0]"]);
+                header("Location: ".$destJSON->osu[0]);
                 $destination = "osu! Profile";
             }
-            $writeToLogType = "N/A";
         } elseif (isset($_GET["soundcloud"])){
             if ($_GET["soundcloud"] == "sets"){
-                destJSONRedirect(["soundcloud[1]"]);
+                header("Location: ".$destJSON->soundcloud[1]);
                 $destination = "Soundcloud Sets";
-            } elseif ($_GET["soundcloud"] == "playlist") {
-                destJSONRedirect(["soundcloud[2]"]);
+            } elseif ($_GET["soundcloud"] == "good-music") {
+                header("Location: ".$destJSON->soundcloud[2]);
                 $destination = "Soundcloud 'Good Music' Playlist";
             } else {
-                destJSONRedirect(["soundcloud[0"]);
+                header("Location: ".$destJSON->soundcloud[0]);
                 $destination = "Soundcloud Page";
             }
         } else {}
+
+
 
     $writeToLogDestination = "Destination: ".$destination."\n";
     $writeToLog = $writeToLogDestination.$writeToLogIP.$writeToLogUserAgent.$writeToLogReferer.$writeToLogRemotePort.$writeToLogHostname.$writeToLogTime.$writeToLogCountry."\n\n";

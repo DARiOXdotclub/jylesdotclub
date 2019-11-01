@@ -1,12 +1,12 @@
 {
-	"disord": "https://discord.gg/x92bvet",
-	"seedbot": "https://seedbot.xyz",
-	"donate": "https://paypal.me/darioxservices",
-	"steam": "https://steamcomminity.com/id/seed_main/",
-	"github": "https://github.com/jylescoad-ward",
-	"youtube": "https://youtube.com/seedvevo",
-	"twitter": "https://twitter.com/jylescoadward",
-	"twitch": "https://twitch.tv/seedplaysgames",
+	"discord": ["https://discord.gg/x92bvet"],
+	"seedbot": ["https://seedbot.xyz"],
+	"donate": ["https://paypal.me/darioxservices"],
+	"steam": ["https://steamcomminity.com/id/seed_main/"],
+	"github": ["https://github.com/jylescoad-ward"],
+	"youtube": ["https://youtube.com/seedvevo"],
+	"twitter": ["https://twitter.com/jylescoadward"],
+	"twitch": ["https://twitch.tv/seedplaysgames"],
 	"osu": [
 		"https://osu.ppy.sh/u/seedplaysgames",
 		"https://cdn.jyles.club/share/osu-skin/latest.osk"
