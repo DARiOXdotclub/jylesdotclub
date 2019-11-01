@@ -92,12 +92,8 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     $destJSON = json_decode(file_get_contents("./dest.json"));
 
     function destJSONRedirect($args) {
-      echo $destJSON->{$args};
         header("Location: ".$destJSON->$args);
     } 
-
-    header("Location".$destJSON->{'discord'});
-    echo $destJSON->discord[0];
 
         if (isset($_GET["discord"])){
             header("Location: ".$destJSON->discord[0]);
