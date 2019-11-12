@@ -30,10 +30,14 @@
 		$songURLs = json_decode('[
 			"https://cdn.jyles.club/pageaudio/quok-atariwave.mp3",
 			"https://cdn.jyles.club/pageaudio/renard-sinisterrrrrrrr.mp3",
-			"https://cdn.jyles.club/pageaudio/deadmau5-all-i-had.mp3"
+			"https://cdn.jyles.club/pageaudio/deadmau5-allihad.mp3",
+			"https://cdn.jyles.club/pageaudio/baq5-outoftouch.mp3",
+			"https://cdn.jyles.club/pageaudio/busdriver-imaginaryplaces.mp3",
+			"https://cdn.jyles.club/pageaudio/imonster-daydreaminblue.mp3",
+			"https://cdn.jyles.club/pageaudio/rude-eternalyouth.mp3"
 		]');
 
-		$randomInt = mt_rand(0,2);
+		$randomInt = mt_rand(0,5);
 
 		$marquee = '<center class="song">
 		    <marquee class="music fade-in-fwd" width="250px" direction="left" scrollamount="3" behavior="scroll">
