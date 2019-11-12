@@ -160,7 +160,7 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     }
 
 
-
+    Include __DIR__."/random.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -228,7 +228,7 @@ body{
               jyles.club
             </h1>
             <p class="lead fade-in-fwd subtitle">
-            donate $2 so i can get a can of heinz beans
+              <?php echo subtitlePicker(); ?>
             </p><br><br>
             <table class="table-links fade-in-fwd">
               <tr>
@@ -265,12 +265,11 @@ body{
       </div>
     </center>
 
-    <center class="song" >
-    <marquee class="music fade-in-fwd" width="250px" direction="left" scrollamount="3" behavior="scroll">
-      Currently Playing:  <a href="https://soundcloud.com/lofi-fpv/quok-atariwave-instrumental?in=jylescoad-ward/sets/good-music"> Atariwave [Insturemntal] </a>by Quok</a></marquee>
-    </center>
+    <?php echo randomSongPicker(); ?>
+
   </body>
-  <iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="https://storage.googleapis.com/file-asia/cdn/atariwave-quok.mp3" allow="autoplay" height="0" width="0"></iframe>
+
+
 <div class="donate">
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
     <input type="hidden" name="cmd" value="_s-xclick" />
