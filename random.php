@@ -26,21 +26,21 @@
 	}
 
 	function randomSongPicker() {
-		$songNames = json_decode('[
-			`<a href="https://soundcloud.com/lofi-fpv/quok-atariwave-instrumental?in=jylescoad-ward/sets/good-music">Atariwave [Instrumental] by Quok</a>`,
-			`<a href="https://www.youtube.com/watch?v=74cfflczqRw">Sinisterrrrrrrr</a> by <a href="https://lapfoxtrax.com/">Renard</a>`
-		]');
+		$songNames = file("namelinks.txt");
 		$songURLs = json_decode('[
-			"https://cdn.jyles.club/pageaudio/quok-atariwave-instrumental.mp3",
+			"https://cdn.jyles.club/pageaudio/quok-atariwave.mp3",
 			"https://cdn.jyles.club/pageaudio/renard-sinisterrrrrrrr.mp3"
 		]');
 
 		$randomInt = mt_rand(0,1);
-		$songResponse = json_decode($rawJSON,true);
 
-		$songName = $songNames[$randomInt];
-		$songURL = $songURLs[$randomInt];
-
-		$final = marqueeGen($songName)."<br>".iframeGen($songURL);
+		$marquee = '<center class="song">
+		    <marquee class="music fade-in-fwd" width="250px" direction="left" scrollamount="3" behavior="scroll">
+		    	Currently Playing: '.$songNames[$randomInt].'
+		    </marquee>
+		</center>';
+		$iframe = '<iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="'.$songURLs[$randomInt].'" allow="autoplay" height="0" width="0" id="iframe"></iframe>';
+		echo '<script>document.getElementById("iframe").volume = 0.2;</script>';
+		$final = $marquee.$iframe;
 		return $final;
 	}
