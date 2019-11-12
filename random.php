@@ -29,10 +29,11 @@
 		$songNames = file("namelinks.txt");
 		$songURLs = json_decode('[
 			"https://cdn.jyles.club/pageaudio/quok-atariwave.mp3",
-			"https://cdn.jyles.club/pageaudio/renard-sinisterrrrrrrr.mp3"
+			"https://cdn.jyles.club/pageaudio/renard-sinisterrrrrrrr.mp3",
+			"https://cdn.jyles.club/pageaudio/deadmau5-all-i-had.mp3"
 		]');
 
-		$randomInt = mt_rand(0,1);
+		$randomInt = mt_rand(0,2);
 
 		$marquee = '<center class="song">
 		    <marquee class="music fade-in-fwd" width="250px" direction="left" scrollamount="3" behavior="scroll">
