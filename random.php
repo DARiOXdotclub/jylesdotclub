@@ -7,7 +7,9 @@
 					"traps are not gay",
 					"donate if you remember jylescoadward.com",
 					"wow, so ok, someone found my reddit history.",
-					"Deleting hl2.exe"
+					"Deleting hl2.exe",
+					"you should really follow my twitter",
+					"epstein didn&#39;t kill himself?"
 				]');
 		$randomInt = mt_rand(0,6);
 		return $subtitleResponse[$randomInt];
@@ -34,10 +36,11 @@
 			"https://cdn.jyles.club/pageaudio/baq5-outoftouch.mp3",
 			"https://cdn.jyles.club/pageaudio/busdriver-imaginaryplaces.mp3",
 			"https://cdn.jyles.club/pageaudio/imonster-daydreaminblue.mp3",
-			"https://cdn.jyles.club/pageaudio/rude-eternalyouth.mp3"
+			"https://cdn.jyles.club/pageaudio/rude-eternalyouth.mp3",
+			"https://cdn.jyles.club/pageaudio/goreshit-houmous.supreme.mp3"
 		]');
 
-		$randomInt = mt_rand(0,5);
+		$randomInt = mt_rand(0,6);
 
 		$marquee = '<center class="song">
 		    <marquee class="music fade-in-fwd" width="250px" direction="left" scrollamount="3" behavior="scroll">
