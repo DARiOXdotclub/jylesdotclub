@@ -259,6 +259,11 @@ body{
                   <a href="http://jyles.club/?youtube" rel="external follow">Youtube</a>
                 </td>
               </tr>
+              <tr>
+                <td>
+                  <a href="http://share.jyles.club">File Share</a>
+                </td>
+              </tr>
             </table>
           </div>
         </div>

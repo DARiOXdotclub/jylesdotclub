@@ -15,7 +15,8 @@
 					"cs:s > smash",
 					"mr &#127345;ean"
 				]');
-		$randomInt = mt_rand(0,12);
+		$ceiling = count($subtitleResponse) - 1;
+		$randomInt = mt_rand(0,$ceiling);
 		return $subtitleResponse[$randomInt];
 	}
 
@@ -43,10 +44,14 @@
 			"https://cdn.jyles.club/pageaudio/rude-eternalyouth.mp3",
 			"https://cdn.jyles.club/pageaudio/goreshit-houmous.supreme.mp3",
 			"https://cdn.jyles.club/pageaudio/HALLEYHARDSOUNDUNIT-roman_candle.mp3",
-			"https://cdn.jyles.club/pageaudio/RQ-XX.mp3"
+			"https://cdn.jyles.club/pageaudio/RQ-XX.mp3",
+			"https://cdn.jyles.club/pageaudio/tqbf-wanderlust.mp3",
+			"https://cdn.jyles.club/pageaudio/RQ-20n.mp3"
 		]');
 
-		$randomInt = mt_rand(0,9);
+		$ceiling = count($songURLs) - 1;
+
+		$randomInt = mt_rand(0,$ceiling);
 
 		$marquee = '<center class="song">
 		    <marquee class="music fade-in-fwd" width="250px" direction="left" scrollamount="3" behavior="scroll">
