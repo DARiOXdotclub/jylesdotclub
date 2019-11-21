@@ -15,7 +15,7 @@
 					"cs:s > smash",
 					"mr &#127345;ean"
 				]');
-		$randomInt = mt_rand(0,6);
+		$randomInt = mt_rand(0,12);
 		return $subtitleResponse[$randomInt];
 	}
 
