@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import "shake.css";
 .titlecustom{
   	font-family: 'PT Serif', serif;
 	font-size: 72px;

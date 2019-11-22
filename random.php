@@ -1,20 +1,6 @@
 <?php
 	function subtitlePicker() {
-		$subtitleResponse = json_decode('[
-					"donate $2 so i can get a can of heinz beanz",
-					"can i get, uhhhhh, b0neless pizzzz",
-					"speedcore > any other genre",
-					"traps are not gay",
-					"donate if you remember jylescoadward.com",
-					"wow, so ok, someone found my reddit history.",
-					"Deleting hl2.exe",
-					"you should really follow my twitter",
-					"epstein didn&#39;t kill himself?",
-					"the quick brown fox jumps over the lazy dog",
-					"i$#39;m the baaaaallddd guyyyyyy",
-					"cs:s > smash",
-					"mr &#127345;ean"
-				]');
+		$subtitleResponse = json_decode(file_get_contents("subtitle.json"));
 		$ceiling = count($subtitleResponse) - 1;
 		$randomInt = mt_rand(0,$ceiling);
 		return $subtitleResponse[$randomInt];
