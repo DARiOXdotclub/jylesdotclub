@@ -1,13 +1,7 @@
 <?php
 	function subtitlePicker() {
 		$subtitleResponse = json_decode(file_get_contents("subtitle.json"));
-		$ceiling = count($subtitleResponse) - 1;
-		$randomInt = mt_rand(0,$ceiling);
-		return $subtitleResponse[$randomInt];
-	}
-
-	function iframeGen($url) {
-		return `<iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="`.$url.`" allow="autoplay" height="0" width="0"></iframe>`;
+		return $subtitleResponse[mt_rand(0,count($subtitleResponse) - 1)];
 	}
 	function marqueeGen($content) {
 		return `
