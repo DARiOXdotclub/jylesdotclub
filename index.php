@@ -238,9 +238,6 @@ body{
                 <td>
                   <a href="http://jyles.club/?discord" rel="external follow">Discord</a>
                 </td>
-                <td>
-                  <a href="http://jyles.club/?seedbot" rel="external follow">SeedBot</a>
-                </td>
               </tr>
               <tr>
                 <td>
@@ -249,9 +246,6 @@ body{
                 <td>
                   <a href="http://jyles.club/?osu=skin" rel="external follow" style="color: #ffc1ef;" download>osu! skin</a>
                 </td>
-                <td>
-                  <a href="http://jyles.club/?youtube" rel="external follow">Youtube</a>
-                </td>
               </tr>
               <tr>
                 <td>
@@ -259,6 +253,14 @@ body{
                 </td>
                 <td>
                   <a href="mailto:jylescoadward@national.shitposting.agency">Contact Email</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://jyles.club/?seedbot" rel="external follow">SeedBot</a>
+                </td>
+                <td>
+                  <a href="http://jyles.club/?youtube" rel="external follow">Youtube</a>
                 </td>
               </tr>
             </table>
