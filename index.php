@@ -236,9 +236,6 @@ body{
                   <a href="http://jyles.club/?github" rel="external follow">Github</a>
                 </td>
                 <td>
-                  <a href="http://jyles.club/?steam" rel="external nofollow">Steam</a>
-                </td>
-                <td>
                   <a href="http://jyles.club/?discord" rel="external follow">Discord</a>
                 </td>
                 <td>
@@ -251,9 +248,6 @@ body{
                 </td>
                 <td>
                   <a href="http://jyles.club/?osu=skin" rel="external follow" style="color: #ffc1ef;" download>osu! skin</a>
-                </td>
-                <td> 
-                  <a href="http://jyles.club/?osu" rel="external follow" style="color: #ffc1ef;">osu! profile</a>
                 </td>
                 <td>
                   <a href="http://jyles.club/?youtube" rel="external follow">Youtube</a>
