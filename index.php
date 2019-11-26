@@ -264,7 +264,7 @@ body{
                   <a href="http://share.jyles.club">File Share</a>
                 </td>
                 <td>
-                  <a href="mailto:jylescoadward@national.shitposting.agency">Website Contact</a>
+                  <a href="mailto:jylescoadward@national.shitposting.agency">Contact Email</a>
                 </td>
               </tr>
             </table>
