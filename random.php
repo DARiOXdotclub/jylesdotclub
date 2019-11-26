@@ -26,7 +26,14 @@
 			"https://cdn.jyles.club/pageaudio/HALLEYHARDSOUNDUNIT-roman_candle.mp3",
 			"https://cdn.jyles.club/pageaudio/RQ-XX.mp3",
 			"https://cdn.jyles.club/pageaudio/tqbf-wanderlust.mp3",
-			"https://cdn.jyles.club/pageaudio/RQ-20n.mp3"
+			"https://cdn.jyles.club/pageaudio/RQ-20n.mp3",
+			"https://cdn.jyles.club/pageaudio/renard-burning_rome.mp3",
+			"https://cdn.jyles.club/pageaudio/renard-halfway.mp3",
+			"https://cdn.jyles.club/pageaudio/renard-megawat.mp3",
+			"https://cdn.jyles.club/pageaudio/kitsune2-everybody_rush.mp3",
+			"https://cdn.jyles.club/pageaudio/tqbf-400_cherries_per_minute.mp3",
+			"https://cdn.jyles.club/pageaudio/tqbf-fresh_out.mp3",
+			"https://cdn.jyles.club/pageaudio/tqbf-numbnuts.mp3"
 		]');
 
 		$ceiling = count($songURLs) - 1;
