@@ -75,3 +75,9 @@ table{
 	width:400px;
 	text-align: center;
 }
+.contact{
+	position:absolute;
+	bottom:20px;
+	right:20px;
+	text-align: right;
+}
