@@ -105,7 +105,6 @@ Include __DIR__."/ip.php";
     $writeToLogDestination = $destination;
 
 $writeToLog = $writeToLogTime.",".$writeToLogIP.",".$writeToLogUserAgent.",".$writeToLogCountry.",".$writeToLogDestination.",".$writeToLogType.",".$writeToLogReferer.",".$writeToLogHostname."\n";
-echo $writeToLog;
 
 
     if (strpos($writeToLogUserAgent, 'CloudFlare-AlwaysOnline') !== true) {
