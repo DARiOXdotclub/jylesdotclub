@@ -14,11 +14,11 @@ Include __DIR__."/ip.php";
     $logWriteDestination = $writeDirectory."/".$logFileName;
     $log = fopen($logWriteDestination, a);
     $writeToLogType;
-    $writeToLogIP = $_SERVER['REMOTE_ADDR']."\n";
-    $writeToLogUserAgent = $_SERVER['HTTP_USER_AGENT']."\n";
-    $writeToLogHostname = $_SERVER['REMOTE_HOST']."\n";
-    $writeToLogCountry = ip_info($_SERVER['REMOTE_ADDR'], "country")."\n";
-    $writeToLogTime = date('l j \of F Y h;i:s A')."\n";
+    $writeToLogIP = $_SERVER['REMOTE_ADDR'];
+    $writeToLogUserAgent = $_SERVER['HTTP_USER_AGENT'];
+    $writeToLogHostname = $_SERVER['REMOTE_HOST'];
+    $writeToLogCountry = ip_info($_SERVER['REMOTE_ADDR'], "country");
+    $writeToLogTime = date('l j \of F Y h;i:s A');
     $writeToLogReferer = $_SERVER['HTTP_REFERER'];
     
     function gtfo() {
