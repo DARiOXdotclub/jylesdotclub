@@ -15,7 +15,7 @@ Include __DIR__."/ip.php";
     $log = fopen($logWriteDestination, a);
     $writeToLogType;
     $writeToLogIP = $_SERVER['REMOTE_ADDR'];
-    $writeToLogUserAgent = $_SERVER['HTTP_USER_AGENT'];
+    $writeToLogUserAgent = str_replace(",", " | ", $_SERVER['HTTP_USER_AGENT']);
     $writeToLogHostname = $_SERVER['REMOTE_HOST'];
     $writeToLogCountry = ip_info($_SERVER['REMOTE_ADDR'], "country");
     $writeToLogTime = date('l j \of F Y h;i:s A');
@@ -105,7 +105,6 @@ Include __DIR__."/ip.php";
     $writeToLogDestination = $destination;
 
 $writeToLog = $writeToLogTime.",".$writeToLogIP.",".$writeToLogUserAgent.",".$writeToLogCountry.",".$writeToLogDestination.",".$writeToLogType.",".$writeToLogReferer.",".$writeToLogHostname."\n";
-
 
     if (strpos($writeToLogUserAgent, 'CloudFlare-AlwaysOnline') !== true) {
         fwrite($log, $writeToLog);
