@@ -9,7 +9,7 @@
 Include __DIR__."/ip.php";
 
  /* Log users */
-    $writeDirectory = "/var/www/dxcdn/log";
+    $writeDirectory = "/etc/darioxlog";
     $logFileName = "jylesclub.csv";
     $logWriteDestination = $writeDirectory."/".$logFileName;
     $log = fopen($logWriteDestination, a);
