@@ -1,6 +1,5 @@
 .subtitle{
 	height: 33px;
-	width: 100%;
 
 	position: absolute;
 
@@ -9,4 +8,6 @@
 	font-size: 26px;
 
 	text-align: center;
+
+	width: calc(100% - 20px);
 }
