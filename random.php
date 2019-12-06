@@ -49,13 +49,8 @@
 
 		$randomInt = mt_rand(0,$ceiling);
 
-		$marquee = '<center class="song">
-		    <marquee class="music fade-in-fwd" width="250px" direction="left" scrollamount="3" behavior="scroll">
-		    	Currently Playing: '.$songNames[$randomInt].'
-		    </marquee>
-		</center>';
+		$marquee = $songNames[$randomInt];
 		$iframe = '<iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="'.$songURLs[$randomInt].'" allow="autoplay" height="0" width="0" id="iframe"></iframe>';
-		echo '<script>document.getElementById("iframe").volume = 0.2;</script>';
 		$final = $marquee.$iframe;
 		return $final;
 	}
