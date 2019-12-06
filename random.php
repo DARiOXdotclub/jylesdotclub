@@ -39,7 +39,7 @@
 			"https://cdn.jyles.club/pageaudio/renard-entire_world.mp3",
 			"https://cdn.jyles.club/pageaudio/goreshit-ron.mp3",
 			"https://cdn.jyles.club/pageaudio/renard-couldve_been_nice.mp3",
-			"https://cdn.jyles.club/pageaudio/RQ-cum_monolith",
+			"https://cdn.jyles.club/pageaudio/RQ-cum_monolith.mp3",
 			"https://cdn.jyles.club/pageaudio/tqbf-bub_vs_bob.mp3",
 			"https://cdn.jyles.club/pageaudio/darwin-take_you_back.mp3",
 			"https://cdn.jyles.club/pageaudio/kitsune2-tung_icelandic_lesbian.mp3"
