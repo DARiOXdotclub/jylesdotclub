@@ -15,7 +15,11 @@
 @-webkit-keyframes fade-in-fwd{0%{-webkit-transform:translateZ(-80px);transform:translateZ(-80px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes fade-in-fwd{0%{-webkit-transform:translateZ(-80px);transform:translateZ(-80px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
 
 body{
-	background-color:#161616;
+	background: rgb(10,10,70);
+	background: -moz-linear-gradient(90deg, rgba(10,10,70,1) 0%, rgba(2,2,14,1) 50%, rgba(10,10,70,1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(10,10,70,1) 0%, rgba(2,2,14,1) 50%, rgba(10,10,70,1) 100%);
+	background: linear-gradient(90deg, rgba(10,10,70,1) 0%, rgba(2,2,14,1) 50%, rgba(10,10,70,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0a0a46",endColorstr="#0a0a46",GradientType=1);
 	color: #fff;
 }
 *{font-family: 'Source Sans Pro', sans-serif;}
