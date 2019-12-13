@@ -1,5 +1,4 @@
 <?php
-
 Include __DIR__."/ip.php";
 
  /* Log users */
@@ -107,7 +106,6 @@ $writeToLog = $writeToLogTime.",".$writeToLogIP.",".$writeToLogUserAgent.",".$wr
     else {
         echo "Hello CloudFlare!";
     }
-
 
     Include __DIR__."/random.php";
 ?>
