@@ -141,6 +141,10 @@ $writeToLog = $writeToLogTime.",".$writeToLogIP.",".$writeToLogUserAgent.",".$wr
 				<td><a href="https://jyles.club?seedbot">Discord Bot</a></td>
 				<td><a href="https://jyles.club?youtube">Youtube</a></td>
 			</tr>
+            <tr>
+                <td><a href="https://jyles.club/projects">Projects</a></td>
+                <td><a href="https://jyles.club?soundcloud">Soundcloud</a></td>
+            </tr>
 		</table>
 		<marquee class="musicticker fade-in-fwd" direction="left" scrollamount="3" behavior="scroll">
 			<div>
