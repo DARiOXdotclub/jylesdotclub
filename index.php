@@ -60,6 +60,10 @@ Include __DIR__."/ip.php";
             header("Location: ".$destJSON->privacy[0]);
             $writeToLogType="Redirect";
             $destination = "DARiOX Privacy Page";
+        } elseif (isset($_GET['projects'])){
+            header("Location: ".$destJSON->projects[0]);
+            $writeToLogType="Redirect";
+            $destination="jyles.club Projects";
         } elseif (isset($_GET["osu"])){
             if ($_GET["osu"] == "skin"){
                 header("Location: ".$destJSON->osu[1]);
@@ -142,7 +146,7 @@ $writeToLog = $writeToLogTime.",".$writeToLogIP.",".$writeToLogUserAgent.",".$wr
 				<td><a href="https://jyles.club?youtube">Youtube</a></td>
 			</tr>
             <tr>
-                <td><a href="https://jyles.club/projects">Projects</a></td>
+                <td><a href="https://jyles.club?projects">Projects</a></td>
                 <td><a href="https://jyles.club?soundcloud">Soundcloud</a></td>
             </tr>
 		</table>
