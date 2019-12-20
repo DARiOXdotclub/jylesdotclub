@@ -1,0 +1,68 @@
+<style>
+	.countdown{
+		position: absolute;
+		top: 15px;
+		right: 15px;
+
+		border: 1px white solid;
+		border-radius: 5px;
+		color: white;
+
+		text-align: center;
+	}
+	#tr-border{
+		border-top: 1px solid white;
+	}
+	.big-fella{
+		font-size: 21pt;
+		font-weight: bolder;
+	}
+</style>
+<div class="countdown">
+	Time Until 2020
+<table style="border-top: 1px solid white;text-align:center">
+	<tr class="big-fella">
+		<td><span id="timer-days"></span></td>
+		<td><span id="timer-hours"></span></td>
+		<td><span id="timer-mins"></span></td>
+		<td><span id="timer-secs"></span></td>
+	</tr>
+	<tr>
+		<td id="tr-border">Days</td>
+		<td id="tr-border">Hours</td>
+		<td id="tr-border">Minutes</td>
+		<td id="tr-border">Seconds</td>
+	</tr>
+</table>
+</div>
+<script>
+var endDate = new Date("Jan 1, 2020 0:00:00").getTime();
+
+var timer = setInterval(function() {
+
+    let now = new Date().getTime();
+    let t = endDate - now;
+    
+    if (t >= 0) {
+    
+        let days = Math.floor(t / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        let secs = Math.floor((t % (1000 * 60)) / 1000);
+    
+        document.getElementById("timer-days").innerHTML = days;
+    
+        document.getElementById("timer-hours").innerHTML = ("0"+hours).slice(-2)
+    
+        document.getElementById("timer-mins").innerHTML = ("0"+mins).slice(-2)
+    
+        document.getElementById("timer-secs").innerHTML = ("0"+secs).slice(-2);
+    
+    } else {
+
+        document.getElementById("timer").innerHTML = "The countdown is over!";
+    
+    }
+    
+}, 1000);
+</script>

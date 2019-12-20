@@ -112,6 +112,8 @@ $writeToLog = $writeToLogTime.",".$writeToLogIP.",".$writeToLogUserAgent.",".$wr
     }
 
     Include __DIR__."/random.php";
+
+    echo file_get_contents("countdown.html");
 ?>
 
 <!DOCTYPE html>
