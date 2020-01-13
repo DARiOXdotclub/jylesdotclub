@@ -1,5 +1,5 @@
 .links{
-	width: 276px;
+	width: 350px;
 
 	font-size:20px;
 	text-align:center;
@@ -8,9 +8,9 @@
 
 	top: 45%;
 
-	left: calc(50% - 275px/2);
+	left: calc(50% - 350px/2);
 }
 .links td{
-	width: 130px;
+	width: 175px;
 	height: 30px;
 }
