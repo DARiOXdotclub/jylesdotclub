@@ -103,16 +103,12 @@ Include __DIR__."/ip.php";
 
 $writeToLog = $writeToLogTime.",".$writeToLogIP.",".$writeToLogUserAgent.",".$writeToLogCountry.",".$writeToLogDestination.",".$writeToLogType.",".$writeToLogReferer.",".$writeToLogHostname."\n";
 
-    if (strpos($writeToLogUserAgent, 'CloudFlare-AlwaysOnline') !== true) {
-        fwrite($log, $writeToLog);
-        fclose($log);
-    }
-    else {
-        echo "Hello CloudFlare!";
-    }
+    fwrite($log, $writeToLog);
+    fclose($log);
 
     Include __DIR__."/random.php";
 
+    //Adds countdown for a special event.
     //echo file_get_contents("countdown.html");
 ?>
 
