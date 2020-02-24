@@ -20,7 +20,7 @@
 
 		$marquee = $songNames[$randomInt];
 
-		$songChoice = "https://storage.googleapis.com/cdn.jyles.club/pageaudio".$songURLs[$randomInt];
+		$songChoice = "https://storage.googleapis.com/cdn.jyles.club/pageaudio/".$songURLs[$randomInt];
 
 		$iframe = '<iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="'.$songChoice.'" allow="autoplay" height="0" width="0" id="iframe"></iframe>';
 		$final = $marquee.$iframe;
