@@ -1,11 +1,12 @@
 <?php
+
 Include __DIR__."/ip.php";
 
  /* Log users */
     $writeDirectory = "/etc/darioxlog";
     $logFileName = "jylesclub.csv";
     $logWriteDestination = $writeDirectory."/".$logFileName;
-    $log = fopen($logWriteDestination, a);
+    $log = fopen($logWriteDestination, "a");
     $writeToLogType;
     $writeToLogIP = $_SERVER['REMOTE_ADDR'];
     $writeToLogUserAgent = str_replace(",", " ", $_SERVER['HTTP_USER_AGENT']);
@@ -18,7 +19,7 @@ Include __DIR__."/ip.php";
         header("Location: ".$_SERVER['HTTP_REFERER']);
     }
 
-    $destJSON = json_decode(file_get_contents("./dest.json"));
+    $destJSON = json_decode(file_get_contents(__DIR__."/dest.json"));
 
     function destJSONRedirect($args) {
         header("Location: ".$destJSON->$args);
@@ -110,59 +111,3 @@ $writeToLog = $writeToLogTime.",".$writeToLogIP.",".$writeToLogUserAgent.",".$wr
 
     //Adds countdown for a special event.
     //echo file_get_contents("countdown.html");
-?>
-
-<!DOCTYPE html>
-<html>
-	<head>
-		<link href="style.css" rel="stylesheet" type="text/css" />
-		<title>jyles.club</title>
-	</head>
-	<body>
-		<div class="border fade-in-fwd"></div>
-		<div class="title .slide-in-top">
-			jyles.club
-		</div>
-		<div class="subtitle slide-in-top">
-			<?php echo subtitlePicker(); ?>
-		</div>
-		<table class="links fade-in-fwd">
-			<tr>
-				<td><a href="https://jyles.club?github">Github</a></a></td>
-				<td><a href="https://jyles.club?discord">Discord</a></td>
-			</tr>
-			<tr>
-				<td><a href="https://jyles.club?twitch">Twitch</a></td>
-				<td><a href="https://jyles.club?osu=skin" style="color: #ffc1ef;" download>osu! skin</a></td>
-			</tr>
-			<tr>
-				<td><a href="http://share.jyles.club">File Share</a></td>
-				<td><a href="http://jyles.club?contactemail">Contact Email</a></td>
-			</tr>
-			<tr>
-				<td><a href="https://jyles.club?seedbot">Discord Bot</a></td>
-				<td><a href="https://jyles.club?youtube">Youtube</a></td>
-			</tr>
-            <tr>
-                <td><a href="https://jyles.club?projects">Projects</a></td>
-                <td><a href="https://jyles.club/projects/de_hub">CS:GO Map <sup>(de_hub)</sup></a></td>
-            </tr>
-		</table>
-		<marquee class="musicticker fade-in-fwd" direction="left" scrollamount="3" behavior="scroll">
-			<div>
-				<strong>Currently Playing:</strong> <?php echo randomSongPicker(); ?>
-			</div>
-		</marquee>
-		<div class="donate fade-in-fwd">
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-				<input type="hidden" name="cmd" value="_s-xclick" />
-				<input type="hidden" name="hosted_button_id" value="X8MN67VEWTLN8" />
-				<input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-				<img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1" />
-			</form>
-		</div>
-		<div class="privacy fade-in-fwd">
-			By using this website you agree to the <a href="https://jyles.club?privacy">DARiOX Privacy Policy</a>
-		</div>
-	</body>
-</html>
