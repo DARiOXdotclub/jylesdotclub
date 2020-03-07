@@ -6,53 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <title>jyles.club - coming soon</title>
-		<style>
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-*{
-    font-family: 'Roboto', sans;
-}
-
-body{
-    background-color:black;
-}
-img.cms{
-    padding-top:30px;
-    margin:auto;
-    min-height:50px;
-    height:300px;
-}
-td{
-    color: white;
-}
-table *{
-    text-align:center;
-}
-table{
-    width:500px;
-}
-td{
-    min-width:110px;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-}
-a{
-    color:white;
-}
-a:hover{
-    color:white;
-    font-weight:bold;
-}
-td:hover{
-    font-weight:bold;
-}
-strong{
-    color:white;
-}
-div{
-    color:white;
-}
-		</style>
+		<link href="style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <center>
