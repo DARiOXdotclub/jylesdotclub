@@ -15,9 +15,9 @@
 	function randomSongPicker() {
 		//Varaible Setup
 		$allowaudiomsg = '<div class="allow_noise_msg"><strong>Jukebox Notice;</strong><br>If you are not using Google Chrome allow audio to be played from this website, thanks <3</div>';
-		$songNames = file(__DIR__."/namelinks.txt");
-		$songURLs = json_decode(file_get_contents(__DIR__."/songs.json"), true);
-		$randomInt = mt_rand(0,count($songURLs) - 1);
+		$songNames = file("https://dxcdn.net/random_song_picker/namelinks.txt");
+		$songURLs = json_decode(file_get_contents("https://dxcdn.net/random_song_picker/file.json"), true);
+		$randomInt = mt_rand(-1,count($songURLs));
 		$marquee = $songNames[$randomInt];
 		$songChoice = "https://storage.googleapis.com/cdn.jyles.club/pageaudio/".$songURLs[$randomInt];
 		$audiotag = '<audio autoplay loop  controls><source src="'.$songChoice.'" type="audio/mpeg">Your browser does not support the audio element.</audio>';
