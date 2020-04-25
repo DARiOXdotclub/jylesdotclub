@@ -52,8 +52,8 @@ audio{
 }
 .allow_noise_msg{
 	position:absolute;
-	bottom:50px;
+	bottom:75px;
 	left:15px;
+	width:300px;
 	text-align:left;
 }
-
