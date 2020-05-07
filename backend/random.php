@@ -34,7 +34,7 @@
 		$songURLs = json_decode(file_get_contents("https://dxcdn.net/random_song_picker/file.json"), true);
 		$randomInt = mt_rand(-1,count($songURLs));
 		$songChoice = "https://storage.googleapis.com/cdn.jyles.club/pageaudio/".$songURLs[$randomInt];
-		$audiotag = '<audio autoplay loop  controls><source src="'.$songChoice.'" type="audio/mpeg">Your browser does not support the audio element.</audio>';
+		$audiotag = '<audio autoplay loop  controls><source audoplay src="'.$songChoice.'" type="audio/mpeg">Your browser does not support the audio element.</audio>';
 		$iframe = '<iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="'.$songChoice.'" allow="autoplay" height="0" width="0" id="iframe"></iframe>';
 
 
