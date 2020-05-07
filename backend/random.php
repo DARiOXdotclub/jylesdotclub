@@ -5,13 +5,15 @@
 		   return 'ie';
 		 elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Trident') !== FALSE) //For Supporting IE 11
 		    return 'ie';
+ 		 elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== FALSE) // Chrome-Based
+ 		   return 'chrome';
 		 elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== FALSE)
 		   return 'firefox';
-		 elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== FALSE)
-		   return 'chrome';
 		 elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== FALSE)
 		   return "opera_mini";
 		 elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== FALSE)
+		   return "opera";
+		 elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'OPR') !== FALSE) // New Opera Tag thingie.
 		   return "opera";
 		 elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== FALSE)
 		   return "safari";
@@ -34,7 +36,7 @@
 		$songURLs = json_decode(file_get_contents("https://dxcdn.net/random_song_picker/file.json"), true);
 		$randomInt = mt_rand(-1,count($songURLs));
 		$songChoice = "https://storage.googleapis.com/cdn.jyles.club/pageaudio/".$songURLs[$randomInt];
-		$audiotag = '<audio autoplay loop  controls><source audoplay src="'.$songChoice.'" type="audio/mpeg">Your browser does not support the audio element.</audio>';
+		$audiotag = '<audio autoplay loop preload="auto" controls><source audoplay src="'.$songChoice.'" type="audio/mpeg">Your browser does not support the audio element.</audio>';
 		$iframe = '<iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="'.$songChoice.'" allow="autoplay" height="0" width="0" id="iframe"></iframe>';
 
 
