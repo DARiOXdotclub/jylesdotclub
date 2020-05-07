@@ -1,12 +1,33 @@
 .links a{
-    color: #dedede;
     font-size: 28pt;
     padding: 4pt;
+    color: white;
     transition: 0.3s;
 }
-links a:hover{
-    color: #4287f5;
+/* Github */
+.links a .fa-github         {color: #ae8ee6;}
+
+/* Discord */
+.links a .fa-discord        {color: #7289DA;}
+
+/* Twitch */
+.links a .fa-twitch         {color: #6441a5;}
+
+/* Twitter */
+.links a .fa-twitter        {color: #08a0e9;}
+
+/* Email (Contact) */
+.links a .fa-envelope       {color:#f25e5e;}
+
+
+
+.links a *{
+    transition: 0.3s;
 }
+.links a *:hover{
+    color: #b5e6d3;
+}
+
 
 
 
