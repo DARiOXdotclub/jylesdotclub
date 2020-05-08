@@ -39,7 +39,11 @@
 		$audiotag = '<audio autoplay loop preload="auto" controls><source audoplay src="'.$songChoice.'" type="audio/mpeg">Your browser does not support the audio element.</audio>';
 		$iframe = '<iframe frameborder="0" style="position:absolute;top:5px;left:5px;" src="'.$songChoice.'" allow="autoplay" height="0" width="0" id="iframe"></iframe>';
 
-		echo js_console('console.log("song id: '.$randomInt.'")');
+		jscon_log("--Song ID\n".$randomInt);
+		jscon_log("--Song URL\n".$songChoice);
+		jscon_log("--Marquee Link\n".$songNames[$randomInt]);
+		jscon_log('--Browser Name\n'.browser());
+		jscon_log('--Your IP Address\n'.$_SERVER['REMOTE_ADDR']);
 
 
 		//Determines if the user's browser is running chrome,

@@ -1,10 +1,7 @@
 <?php
 
 Include __DIR__."/ip.php";
-
-function js_console($cmd) {
-    echo '<script>'.$cmd.'</script>';
-}
+Include __DIR__."/functions.php";
 
  /* Log users */
     $writeDirectory = "/etc/darioxlog";
