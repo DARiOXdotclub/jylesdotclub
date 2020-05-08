@@ -75,6 +75,8 @@ if (isset($_GET["discord"])){
   }
 }
 
-logwrite($type, $destination);
+if (!ISSET($_GET['nolog'])){
+    logwrite($type, $destination);
+}
 
  ?>
