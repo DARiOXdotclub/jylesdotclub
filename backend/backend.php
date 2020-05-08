@@ -2,6 +2,10 @@
 
 Include __DIR__."/ip.php";
 
+function js_console($cmd) {
+    echo '<script>'.$cmd.'</script>';
+}
+
  /* Log users */
     $writeDirectory = "/etc/darioxlog";
     $logFileName = "jylesclub.csv";
@@ -14,7 +18,7 @@ Include __DIR__."/ip.php";
     $writeToLogCountry = ip_info($_SERVER['REMOTE_ADDR'], "country");
     $writeToLogTime = date('l j \of F Y h;i:s A');
     $writeToLogReferer = str_replace(","," ", $_SERVER['HTTP_REFERER']);
-    
+
     function gtfo() {
         header("Location: ".$_SERVER['HTTP_REFERER']);
     }
@@ -23,11 +27,11 @@ Include __DIR__."/ip.php";
 
     function destJSONRedirect($args) {
         header("Location: ".$destJSON->$args);
-    } 
+    }
 
         if (isset($_GET["discord"])){
             header("Location: ".$destJSON->discord[0]);
-            $writeToLogType = "Redirect"; 
+            $writeToLogType = "Redirect";
             $destination = "Discord";
         } elseif (isset($_GET["seedbot"])){
             header("Location: ".$destJSON->seedbot[0]);
