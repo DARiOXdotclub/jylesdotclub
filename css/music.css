@@ -1,0 +1,14 @@
+.music{
+    color:white;
+    z-index:99;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.allow_noise_msg{
+    width: 350px;
+    color: white;
+}
+audio{
+    z-index:98;
+}
