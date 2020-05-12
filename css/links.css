@@ -1,3 +1,16 @@
+.links{
+    display:inline-block;
+    position: absolute;
+    height: 50px;
+    width: 350px;
+    top: calc(50% - 25px);
+    left: calc(50% - 175px);
+    text-align:center;
+}
+.links *{
+    padding: 4pt;
+}
+
 .links a{
     font-size: 28pt;
     padding: 4pt;
@@ -17,7 +30,11 @@
 .links a .fa-twitter        {color: #08a0e9;}
 
 /* Email (Contact) */
-.links a .fa-envelope       {color:#f25e5e;}
+.links a .fa-envelope       {color: #f25e5e;}
+
+/* Paypal Donate */
+.links a .fa-paypal			{color: #169bd7;}
+.links a .fa-paypal:hover 	{color: #253b80;}
 
 
 
@@ -26,20 +43,4 @@
 }
 .links a *:hover{
     color: #b5e6d3;
-}
-
-
-
-
-.links{
-    display:inline-block;
-    position: absolute;
-    height: 50px;
-    width: 350px;
-    top: calc(50% - 25px);
-    left: calc(50% - 175px);
-    text-align:center;
-}
-.links *{
-    padding: 4pt;
 }
