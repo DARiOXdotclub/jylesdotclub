@@ -68,6 +68,9 @@ if (isset($_GET["discord"])){
     }
 } else {
   $destination = "Home";
+  if (strlen($writeToLogReferer) < 1) {
+      $writeToLogType = "New Page";
+  }
   if ($writeToLogReferer === "https://jyles.club" || $writeToLogReferer === "http://jyles.club") {
     $writeToLogType = "Refresh";
   } else {
