@@ -16,7 +16,15 @@ function logwrite($destination,$type){
    $writeToLogTime = date('l j \of F Y h;i:s A');
    $writeToLogReferer = str_replace(","," ", $_SERVER['HTTP_REFERER']);
 
-$writeToLog = $writeToLogTime.",".$writeToLogIP.",".$writeToLogUserAgent.",".$writeToLogCountry.",".$writeToLogDestination.",".$writeToLogType.",".$writeToLogReferer.",".$writeToLogHostname."\n";
+   $writeToLog = "\n";
+    $writeToLog.=$writeToLogTime.",";
+    $writeToLog.=$writeToLogIP.",";
+    $writeToLog.=$writeToLogUserAgent.",";
+    $writeToLog.=$writeToLogCountry.",";
+    $writeToLog.=$writeToLogDestination.",";
+    $writeToLog.=$writeToLogType.",";
+    $writeToLog.=$writeToLogReferer.",";
+    $writeToLog.=$writeToLogHostname.",";
 
    fwrite($log, $writeToLog);
    fclose($log);
