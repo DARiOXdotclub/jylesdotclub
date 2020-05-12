@@ -1,6 +1,7 @@
 @import url("links.css");
 @import url("title.css");
 @import url("music.css");
+@import url("subtitle.css");
 
 *{
     font-family: sans-serif;

@@ -2,7 +2,7 @@
 $export_dir = __DIR__."/backend/";
 
 Include $export_dir."backend.php";
-IF (!ISSET($_GET['nobase'])){
+IF (!ISSET($_GET['base'])){
     echo file_get_contents(__DIR__."/base.html");
 
     IF (!ISSET($_GET['min'])) {
@@ -12,6 +12,9 @@ IF (!ISSET($_GET['nobase'])){
 
         IF (!ISSET($_GET['nomusic'])) {
             echo randomSongPicker();
+        }
+        IF (!ISSET($_GET['nosubtitle'])) {
+            echo subtitlePicker();
         }
     }
 

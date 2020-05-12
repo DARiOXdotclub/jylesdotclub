@@ -3,7 +3,7 @@
 
 	function subtitlePicker() {
 		$subtitleResponse = json_decode(file_get_contents(__DIR__."/subtitle.json"));
-		return $subtitleResponse[mt_rand(0,count($subtitleResponse) - 1)];
+		return '<div class="rand_subtitle">'.$subtitleResponse[mt_rand(0,count($subtitleResponse) - 1)].'</div>';
 	}
 	function marqueeGen($content) {
 		return '<marquee class="music" width="250px" direction="left" scrollamount="3" behavior="scroll">Currently Playing:  '.$content.'</marquee>';
