@@ -16,12 +16,6 @@ function logwrite($destination,$type){
    $writeToLogTime = date('l j \of F Y h;i:s A');
    $writeToLogReferer = str_replace(","," ", $_SERVER['HTTP_REFERER']);
 
-   function gtfo() {
-       header("Location: ".$_SERVER['HTTP_REFERER']);
-   }
-
-
-
 $writeToLog = $writeToLogTime.",".$writeToLogIP.",".$writeToLogUserAgent.",".$writeToLogCountry.",".$writeToLogDestination.",".$writeToLogType.",".$writeToLogReferer.",".$writeToLogHostname."\n";
 
    fwrite($log, $writeToLog);
