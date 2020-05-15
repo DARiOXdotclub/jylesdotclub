@@ -7,4 +7,4 @@ Include __DIR__."/functions.php";
 Include __DIR__."/random.php";
 
     //Adds countdown for a special event.
-    //echo file_get_contents("countdown.html");
+    echo file_get_contents(__DIR__."/countdown.html");

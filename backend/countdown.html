@@ -1,14 +1,22 @@
 <style>
 	.countdown{
-		position: absolute;
-		top: 15px;
-		right: 15px;
+	    display:inline-block;
+	    position: absolute;
+		width: 350px;
+	    top: calc(40% - 40px);
+	    left: calc(50% - 175px);
 
 		border: 1px white solid;
 		border-radius: 5px;
 		color: white;
 
 		text-align: center;
+	}
+	.countdown table{
+		width: inherit;
+	}
+	.countdown table *{
+		color: white;
 	}
 	#tr-border{
 		border-top: 1px solid white;
@@ -17,50 +25,93 @@
 		font-size: 21pt;
 		font-weight: bolder;
 	}
+	#timer-days{
+		height: 32px;
+	}
+	#timer-hours{
+		height: 32px;
+	}
+	#timer-mins{
+		height: 32px;
+	}
+	#timer-secs{
+		height: 32px;
+	}
 </style>
 <div class="countdown">
-	Time Until 2020
-<table style="border-top: 1px solid white;text-align:center">
-	<tr class="big-fella">
-		<td><span id="timer-days"></span></td>
-		<td><span id="timer-hours"></span></td>
-		<td><span id="timer-mins"></span></td>
-		<td><span id="timer-secs"></span></td>
-	</tr>
-	<tr>
-		<td id="tr-border">Days</td>
-		<td id="tr-border">Hours</td>
-		<td id="tr-border">Minutes</td>
-		<td id="tr-border">Seconds</td>
-	</tr>
-</table>
+	<font id="timer"><a href="http://emmaessex.stream">FUNNERDOME IV BIG-ASS BIRTHDAY BASH</a></font>
+	<table style="border-top: 1px solid white;text-align:center">
+		<tr class="big-fella">
+			<td><span id="timer-days"></span></td>
+			<td><span id="timer-hours"></span></td>
+			<td><span id="timer-mins"></span></td>
+			<td><span id="timer-secs"></span></td>
+		</tr>
+		<tr>
+			<td id="tr-border">Days</td>
+			<td id="tr-border">Hours</td>
+			<td id="tr-border">Minutes</td>
+			<td id="tr-border">Seconds</td>
+		</tr>
+	</table>
 </div>
+<script src="moment.js"></script>
+<script src="moment-timezone-with-data.js"></script>
 <script>
-var endDate = new Date("Jan 1, 2020 0:00:00").getTime();
+function toTimeZone(time) {
+    var format = 'YYYY/MM/DD HH:mm:ss ZZ';
+    return moment.tz(time, "Australia/West").format(format);
+}
+function toTimeZone2(time) {
+    var format = 'YYYY/MM/DD HH:mm:ss ZZ';
+    return moment.tz(time, "Etc/GMT+2").format(format);
+}
 
+function getTimeRemaining(endtime){
+	var t = Date.parse(toTimeZone(toTimeZone2(endtime))) - Date.parse(toTimeZone(new Date()));
+	var seconds = Math.floor( (t/1000) % 60 );
+	var minutes = Math.floor( (t/1000/60) % 60 );
+	var hours = Math.floor( (t/(1000*60*60)) % 24 );
+	var days = Math.floor( t/(1000*60*60*24) );
+	return {
+		'total': t,
+		'days': days,
+		'hours': hours,
+		'minutes': minutes,
+		'seconds': seconds
+	};
+}
+
+let endtime = toTimeZone(toTimeZone2("May 15 2020 21:30:00 (EST)"));
 var timer = setInterval(function() {
 
-    let now = new Date().getTime();
-    let t = endDate - now;
+    //let now = new Date().getTime();
+    //let t = now - endDate;
+	//let t = Date.parse(new Date("Fri Mar 15 2020 21:30:00 (EST)")) - Date.parse(new Date());
+
+	let t = Date.parse(toTimeZone(toTimeZone2(endtime))) - Date.parse(toTimeZone(new Date()));
+
+	console.log(t)
 
     if (t >= 0) {
 
-        let days = Math.floor(t / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-        let secs = Math.floor((t % (1000 * 60)) / 1000);
+
+		var seconds = getTimeRemaining(endtime).seconds;
+		var minutes = getTimeRemaining(endtime).minutes
+		var hours = getTimeRemaining(endtime).hours;
+		var days = getTimeRemaining(endtime).days;
 
         document.getElementById("timer-days").innerHTML = days;
 
         document.getElementById("timer-hours").innerHTML = ("0"+hours).slice(-2)
 
-        document.getElementById("timer-mins").innerHTML = ("0"+mins).slice(-2)
+        document.getElementById("timer-mins").innerHTML = ("0"+minutes).slice(-2)
 
-        document.getElementById("timer-secs").innerHTML = ("0"+secs).slice(-2);
+        document.getElementById("timer-secs").innerHTML = ("0"+seconds).slice(-2);
 
     } else {
 
-        document.getElementById("timer").innerHTML = "The countdown is over!";
+        document.getElementById("timer").innerHTML = "FUNNERDOME HAS STARTED";
 
     }
 
