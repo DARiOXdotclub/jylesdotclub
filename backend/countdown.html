@@ -57,10 +57,12 @@
 </div>
 <script src="moment.js"></script>
 <script src="moment-timezone-with-data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.7/jstz.min.js"></script>
 <script>
+	var tzd = jstz.determine()
 function toTimeZone(time) {
     var format = 'YYYY/MM/DD HH:mm:ss ZZ';
-    return moment.tz(time, "Australia/West").format(format);
+    return moment.tz(time, tzd.name()).format(format);
 }
 function toTimeZone2(time) {
     var format = 'YYYY/MM/DD HH:mm:ss ZZ';
@@ -90,8 +92,6 @@ var timer = setInterval(function() {
 	//let t = Date.parse(new Date("Fri Mar 15 2020 21:30:00 (EST)")) - Date.parse(new Date());
 
 	let t = Date.parse(toTimeZone(toTimeZone2(endtime))) - Date.parse(toTimeZone(new Date()));
-
-	console.log(t)
 
     if (t >= 0) {
 
