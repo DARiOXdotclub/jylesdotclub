@@ -6,38 +6,90 @@
         <link href="fontawesome-5.13.0/css/all.min.css" type="text/css" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=0.7">
         <link href="favicon.png" type="text/png" rel="icon" />
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     </head>
     <body>
         <div class="title">
             <img src="img/jyles.gif" width="600px"/>
         </div>
         <div class="links">
-            <a href="https://jyles.club?github" title="Github"><i class="fab fa-github"></i></a>
+            <a href="https://jyles.club?github" title="Github" id="github"><i class="fab fa-github"></i></a>
 
             <!-- Discord -->
-            <a href="https://jyles.club?discord" title="Discord Server"><i class="fab fa-discord"> </i></a>
+            <a href="https://jyles.club?discord" title="Discord Server" id="discord"><i class="fab fa-discord"> </i></a>
 
             <!-- twitch -->
-                <a href="https://jyles.club?twitch" title="Twitch.tv"><i class="fab fa-twitch"></i></a>
+                <a href="https://jyles.club?twitch" title="Twitch.tv" id="twitch"><i class="fab fa-twitch"></i></a>
 
             <!-- twitter -->
-                <a href="https://jyles.club?twitter" title="Twitte"><i class="fab fa-twitter"></i></a>
+                <a href="https://jyles.club?twitter" title="bird app" id="twitter"><i class="fab fa-twitter"></i></a>
 
             <!-- email -->
-                <a href="mailto:contact@jyles.club" title="Contact"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:contact@jyles.club" title="Contact" id="contact"><i class="fas fa-envelope"></i></a>
 
             <!-- projects -->
-                <a href="https://jyles.club/projects" title="Projects"><i class="fas fa-box-open"></i></a>
+                <a href="https://jyles.club/projects" title="Projects" id="projects"><i class="fas fa-code-branch"></i></a>
 
             <!-- Donate -->
-                <a href="https://jyles.club?donate" title="Donate"><i class="fab fa-paypal"></i></a>
+                <a href="https://jyles.club?donate" title="Donate" id="donate"><i class="fab fa-paypal"></i></a>
 
             <!-- Open Directory -->
-                <a href="http://share.jyles.club" title="Open Directory"><i class="fas fa-file"></i></a>
+                <a href="http://share.jyles.club" title="Open Directory" id="opendir"><i class="fas fa-hdd"></i></a>
 
         </div>
+        <div class="hovered_link" id="hvtxt"></div>
         <div class="notice">
             By using this website you agree to the <a href="https://dariox.club/privacy.html">DARiOX Privacy Policy</a>
         </div>
     </body>
+    <script>
+$("#github").hover(function() {
+    $("#hvtxt").stop(true).fadeTo("fast", 1);
+    document.getElementById("hvtxt").innerHTML = "Github";
+}, function() {
+    $("#hvtxt").stop(true).fadeTo("slow", 0);
+});
+$("#discord").hover(function() {
+    $("#hvtxt").stop(true).fadeTo("fast", 1);
+    document.getElementById("hvtxt").innerHTML = "Discord";
+}, function() {
+    $("#hvtxt").stop(true).fadeTo("slow", 0);
+});
+$("#twitch").hover(function() {
+    $("#hvtxt").stop(true).fadeTo("fast", 1);
+    document.getElementById("hvtxt").innerHTML = "Twitch";
+}, function() {
+    $("#hvtxt").stop(true).fadeTo("slow", 0);
+});
+$("#twitter").hover(function() {
+    $("#hvtxt").stop(true).fadeTo("fast", 1);
+    document.getElementById("hvtxt").innerHTML = "Twitter";
+}, function() {
+    $("#hvtxt").stop(true).fadeTo("slow", 0);
+});
+$("#contact").hover(function() {
+    $("#hvtxt").stop(true).fadeTo("fast", 1);
+    document.getElementById("hvtxt").innerHTML = "Contact Email";
+}, function() {
+    $("#hvtxt").stop(true).fadeTo("slow", 0);
+});
+$("#projects").hover(function() {
+    $("#hvtxt").stop(true).fadeTo("fast", 1);
+    document.getElementById("hvtxt").innerHTML = "Projects";
+}, function() {
+    $("#hvtxt").stop(true).fadeTo("slow", 0);
+});
+$("#donate").hover(function() {
+    $("#hvtxt").stop(true).fadeTo("fast", 1);
+    document.getElementById("hvtxt").innerHTML = "Donate";
+}, function() {
+    $("#hvtxt").stop(true).fadeTo("slow", 0);
+});
+$("#opendir").hover(function() {
+    $("#hvtxt").stop(true).fadeTo("fast", 1);
+    document.getElementById("hvtxt").innerHTML = "Open Directory";
+}, function() {
+    $("#hvtxt").stop(true).fadeTo("slow", 0);
+});
+    </script>
 </html>
