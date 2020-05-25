@@ -32,6 +32,9 @@
 /* Email (Contact) */
 .links a .fa-envelope       {color: #f25e5e;}
 
+/* Youtube */
+.links a .fa-youtube        {color: #ff0000;}
+
 /* Paypal Donate */
 .links a .fa-paypal			{color: #169bd7;}
 .links a .fa-paypal:hover 	{color: #253b80;}

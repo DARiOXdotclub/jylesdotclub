@@ -25,7 +25,7 @@
                 <a href="https://jyles.club?twitter" title="bird app" id="twitter"><i class="fab fa-twitter"></i></a>
 
             <!-- email -->
-                <a href="mailto:contact@jyles.club" title="Contact" id="contact"><i class="fas fa-envelope"></i></a>
+                <a href="https://youtube.com/seedvevo" title="Youtube" id="youtube"><i class="fab fa-youtube"></i></a>
 
             <!-- projects -->
                 <a href="https://jyles.club/projects" title="Projects" id="projects"><i class="fas fa-code-branch"></i></a>
@@ -33,8 +33,11 @@
             <!-- Donate -->
                 <a href="https://jyles.club?donate" title="Donate" id="donate"><i class="fab fa-paypal"></i></a>
 
-            <!-- Open Directory -->
-                <a href="http://share.jyles.club" title="Open Directory" id="opendir"><i class="fas fa-hdd"></i></a>
+            <!-- Open Directory
+                <a href="http://share.jyles.club" title="Open Directory" id="opendir"><i class="fas fa-hdd"></i></a> -->
+
+			<!-- Internet Radio -->
+				<a href="http://radio.jyles.club" title="Internet Radio" id="radio"><i class="fas fa-broadcast-tower"></i></a>
 
         </div>
         <div class="hovered_link" id="hvtxt"></div>
@@ -89,6 +92,18 @@ $("#donate").hover(function() {
 $("#opendir").hover(function() {
     $("#hvtxt").stop(true).fadeTo("fast", 1);
     document.getElementById("hvtxt").innerHTML = "Open Directory";
+}, function() {
+    $("#hvtxt").stop(true).fadeTo("slow", 0);
+});
+$("#radio").hover(function() {
+    $("#hvtxt").stop(true).fadeTo("fast", 1);
+    document.getElementById("hvtxt").innerHTML = "Internet Radio";
+}, function() {
+    $("#hvtxt").stop(true).fadeTo("slow", 0);
+});
+$("#youtube").hover(function() {
+    $("#hvtxt").stop(true).fadeTo("fast", 1);
+    document.getElementById("hvtxt").innerHTML = "Youtube Channel";
 }, function() {
     $("#hvtxt").stop(true).fadeTo("slow", 0);
 });
