@@ -13,99 +13,51 @@
             <img src="img/jyles.gif" width="600px" title="lol im secretly a furry"/>
         </div>
         <div class="links">
-            <a href="https://jyles.club?github" title="Github" id="github"><i class="fab fa-github"></i></a>
+            <a href="https://jyles.club?github" title="Github"><i class="fab fa-github"></i></a>
 
             <!-- Discord -->
-            <a href="https://jyles.club?discord" title="Discord Server" id="discord"><i class="fab fa-discord"> </i></a>
+            <a href="https://jyles.club?discord" title="Discord Server"><i class="fab fa-discord"> </i></a>
 
             <!-- twitch -->
-                <a href="https://jyles.club?twitch" title="Twitch.tv" id="twitch"><i class="fab fa-twitch"></i></a>
+                <a href="https://jyles.club?twitch" title="Twitch.tv"><i class="fab fa-twitch"></i></a>
 
             <!-- twitter -->
-                <a href="https://jyles.club?twitter" title="bird app" id="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://jyles.club?twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
 
             <!-- email -->
-                <a href="https://youtube.com/seedvevo" title="Youtube" id="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://youtube.com/seedvevo" title="Youtube"><i class="fab fa-youtube"></i></a>
 
             <!-- projects -->
-                <a href="https://jyles.club/projects" title="Projects" id="projects"><i class="fas fa-code-branch"></i></a>
-
-            <!-- Donate -->
-                <a href="https://jyles.club?donate" title="Donate" id="donate"><i class="fab fa-paypal"></i></a>
+                <a href="https://jyles.club/projects" title="Projects"><i class="fas fa-code-branch"></i></a>
 
             <!-- Open Directory
                 <a href="http://share.jyles.club" title="Open Directory" id="opendir"><i class="fas fa-hdd"></i></a> -->
 
 			<!-- Internet Radio -->
-				<a href="http://radio.jyles.club" title="Internet Radio" id="radio"><i class="fas fa-broadcast-tower"></i></a>
+				<a href="http://radio.jyles.club" title="Internet Radio"><i class="fas fa-broadcast-tower"></i></a>
+
+            <!-- Donate -->
+                <a href="https://jyles.club?donate" title="Donate"><i class="fab fa-paypal"></i></a>
+
+			<!-- Discord Bot -->
+				<a href="https://seedbot.xyz" title="Discord Bot"><i class="fas fa-robot"></i></a>
+
+			<!-- DARiOX -->
+				<a href="https://dariox.club" title="DARiOX"><i class="fas fa-users"></i></a>
 
         </div>
-        <div class="hovered_link" id="hvtxt"></div>
+        <div class="hovered_link" id="hovertext"></div>
         <div class="notice">
             By using this website you agree to the <a href="https://dariox.club/privacy.html">DARiOX Privacy Policy</a>
         </div>
     </body>
     <script>
     // Things for the coolio hover text shit
-$("#github").hover(function() {
-    $("#hvtxt").stop(true).fadeTo("fast", 1);
-    document.getElementById("hvtxt").innerHTML = "Github";
+$("a").hover(function() {
+    $("#hovertext").stop(true).fadeTo("fast", 1);
+    document.getElementById("hovertext").innerHTML = $(this).attr('title');
 }, function() {
-    $("#hvtxt").stop(true).fadeTo("slow", 0);
-});
-$("#discord").hover(function() {
-    $("#hvtxt").stop(true).fadeTo("fast", 1);
-    document.getElementById("hvtxt").innerHTML = "Discord";
-}, function() {
-    $("#hvtxt").stop(true).fadeTo("slow", 0);
-});
-$("#twitch").hover(function() {
-    $("#hvtxt").stop(true).fadeTo("fast", 1);
-    document.getElementById("hvtxt").innerHTML = "Twitch";
-}, function() {
-    $("#hvtxt").stop(true).fadeTo("slow", 0);
-});
-$("#twitter").hover(function() {
-    $("#hvtxt").stop(true).fadeTo("fast", 1);
-    document.getElementById("hvtxt").innerHTML = "Twitter";
-}, function() {
-    $("#hvtxt").stop(true).fadeTo("slow", 0);
-});
-$("#contact").hover(function() {
-    $("#hvtxt").stop(true).fadeTo("fast", 1);
-    document.getElementById("hvtxt").innerHTML = "Contact Email";
-}, function() {
-    $("#hvtxt").stop(true).fadeTo("slow", 0);
-});
-$("#projects").hover(function() {
-    $("#hvtxt").stop(true).fadeTo("fast", 1);
-    document.getElementById("hvtxt").innerHTML = "Projects";
-}, function() {
-    $("#hvtxt").stop(true).fadeTo("slow", 0);
-});
-$("#donate").hover(function() {
-    $("#hvtxt").stop(true).fadeTo("fast", 1);
-    document.getElementById("hvtxt").innerHTML = "Donate";
-}, function() {
-    $("#hvtxt").stop(true).fadeTo("slow", 0);
-});
-$("#opendir").hover(function() {
-    $("#hvtxt").stop(true).fadeTo("fast", 1);
-    document.getElementById("hvtxt").innerHTML = "Open Directory";
-}, function() {
-    $("#hvtxt").stop(true).fadeTo("slow", 0);
-});
-$("#radio").hover(function() {
-    $("#hvtxt").stop(true).fadeTo("fast", 1);
-    document.getElementById("hvtxt").innerHTML = "Internet Radio";
-}, function() {
-    $("#hvtxt").stop(true).fadeTo("slow", 0);
-});
-$("#youtube").hover(function() {
-    $("#hvtxt").stop(true).fadeTo("fast", 1);
-    document.getElementById("hvtxt").innerHTML = "Youtube Channel";
-}, function() {
-    $("#hvtxt").stop(true).fadeTo("slow", 0);
+    $("#hovertext").stop(true).fadeTo("slow", 0);
 });
     </script>
 </html>
