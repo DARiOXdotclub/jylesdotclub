@@ -3,6 +3,9 @@
     z-index:99;
     border-left: 2px solid white;
     border-right: 2px solid white;
+    position:absolute;
+    top:15px;
+    left:15px;
 }
 
 .allow_noise_msg{
