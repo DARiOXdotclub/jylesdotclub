@@ -26,8 +26,10 @@ function logwrite($destination,$type){
     $writeToLog.=$writeToLogReferer.",";
     $writeToLog.=$writeToLogHostname.",";
 
-   fwrite($log, $writeToLog);
-   fclose($log);
+    if ($_COOKIE['settings']['track'] === "true" || !isset($_COOKIE['settings']['track'])) {
+        fwrite($log, $writeToLog);
+        fclose($log);
+    }
 
 }
  ?>

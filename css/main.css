@@ -2,6 +2,7 @@
 @import url("title.css");
 @import url("music.css");
 @import url("subtitle.css");
+@import url("settings.css");
 
 *{
     font-family: sans-serif;

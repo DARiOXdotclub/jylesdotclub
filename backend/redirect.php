@@ -78,7 +78,7 @@ if (isset($_GET["discord"])){
   }
 }
 
-if (!ISSET($_GET['nolog'])){
+if (!ISSET($_GET['nolog']) || $_COOKIE['settings']['track'] === "false"){
     logwrite($type, $destination);
 }
 

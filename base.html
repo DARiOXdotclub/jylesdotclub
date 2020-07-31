@@ -54,8 +54,25 @@
         <div class="notice">
             By using this website you agree to the <a href="https://dariox.club/privacy.html">DARiOX Privacy Policy</a>
         </div>
+        <div class="settings">
+            <div id="settings_background"></div>
+            <div class="settings_dialogue">
+                <form action="pushSettings.php" method="post">
+                    <li><input type="checkbox" name="music"><label for="music">Enable Music</label></li>
+                    <li><input type="checkbox" name="subtitle"><label for="subtitle">Show Subtitle</label></li>
+                    <li><input type="checkbox" name="track"><label for="track">Send Statistics to Developers</label></li>
+                    <input type="submit">
+                </form>
+            </div>
+            <a class="show_settings" id="show_settings" title="Settings" onclick="toggleSettings()"><li class="fas fa-sliders-h"></li></a>
+        </div>
     </body>
     <script>
+
+$(".settings_dialogue").hide();
+$(".settings_background").hide();
+
+
     // Things for the coolio hover text shit
 $("a").hover(function() {
     $("#hovertext").stop(true).fadeTo("fast", 1);
@@ -63,5 +80,23 @@ $("a").hover(function() {
 }, function() {
     $("#hovertext").stop(true).fadeTo("slow", 0);
 });
+
+
+var isSettingsShown = false;
+function toggleSettings() {
+    console.log(isSettingsShown);
+    if (isSettingsShown) {
+        isSettingsShown = false;
+        document.getElementById("show_settings").innerHTML = '<li class="fas fa-sliders-h"></li>';
+        $(".settings_dialogue").hide();
+        $(".settings_background").hide();
+    } else {
+        isSettingsShown = true;
+        document.getElementById("show_settings").innerHTML = '<i class="fas fa-times"></i>';
+        $(".settings_dialogue").show();
+        $(".settings_background").show();
+    }
+}
+
     </script>
 </html>

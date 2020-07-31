@@ -1,0 +1,38 @@
+
+a.show_settings{
+    font-size: 24pt;
+    color:white;
+    position:absolute;
+    top:15px;
+    right:15px;
+}
+a.show_settings:hover{
+    color: #8eeda8;
+}
+
+
+
+
+.settings_dialogue{
+    background-color: rgba(0,0,0,0.6);
+    margin: auto;
+    width: 50%;
+    border: 3px solid white;
+    padding: 10px;
+    position:absolute;
+    top: 50px;
+    left: 25%;
+}
+.settings_dialogue form li label{
+    color: white;
+}
+
+
+.settings{
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+}
