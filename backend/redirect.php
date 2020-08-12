@@ -78,8 +78,11 @@ if (isset($_GET["discord"])){
   }
 }
 
-if (!ISSET($_GET['nolog']) || $_COOKIE['settings']['track'] === "false"){
+if ($_COOKIE['settings']['track'] != "true"){
+	echo '<script>console.log("Logging User Activity...")</script>';
     logwrite($type, $destination);
+} else {
+	echo '<script>console.log("Not Logging User Activity...")</script>';
 }
 
  ?>
