@@ -6,6 +6,7 @@
     top: calc(50% - 25px);
     left: calc(50% - 175px);
     text-align:center;
+	z-index: 8888;
 }
 .links *{
     padding: 4pt;
@@ -15,25 +16,32 @@
     font-size: 28pt;
     padding: 4pt;
     color: white;
-    transition: 0.3s;
+    transition: 0.2s;
+	z-index: 9999;
 }
 /* Github */
 .links a .fa-github         {color: #ae8ee6;}
+.links a .fa-github:hover	{color: #8e73bd;}
 
 /* Discord */
 .links a .fa-discord        {color: #7289DA;}
+.links a .fa-discord:hover  {color: #586bad;}
 
 /* Twitch */
 .links a .fa-twitch         {color: #6441a5;}
+.links a .fa-twitch:hover	{color: #8658db;}
 
 /* Twitter */
 .links a .fa-twitter        {color: #08a0e9;}
+.links a .fa-twitter:hover  {color: #0371a6;}
 
 /* Email (Contact) */
 .links a .fa-envelope       {color: #f25e5e;}
+.links a .fa-envelope:hover {color: #f25e5e;}
 
 /* Youtube */
 .links a .fa-youtube        {color: #ff0000;}
+.links a .fa-youtube:hover  {color: #ff6161;}
 
 /* Paypal Donate */
 .links a .fa-paypal			{color: #169bd7;}
@@ -41,9 +49,6 @@
 
 
 
-.links a *{
-    transition: 0.3s;
-}
 .links a *:hover{
     color: #b5e6d3;
 }
