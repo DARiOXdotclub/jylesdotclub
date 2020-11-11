@@ -1,29 +1,9 @@
-@import url("links.css");
-@import url("title.css");
-@import url("music.css");
-@import url("subtitle.css");
-@import url("settings.css");
+@import "links.css";
 
-*{
-    font-family: sans-serif;
+body {
+	background-color: #030303;
+	color: #dfdfdf;
 }
-
-body{
-    background-color: #1a1a1a;
-}
-
-a{color:#fcba03;transition: 0.3s;}
-a:hover{color:#0398fc;}
-
-.notice{
-    color: white;
-    position:absolute;
-    bottom: 15px;
-    left:15px;
-}
-
-.hit-counter{
-    position:absolute;
-    top: 15px;
-    right: 15px;
+hr {
+	width: 70%;
 }
