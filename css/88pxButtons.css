@@ -1,0 +1,28 @@
+
+div.webButtons {
+	width:768px;
+	margin:auto;
+}
+
+div.webButtons ul{
+	list-style: circle;
+}
+div.webButtons ul li {
+	display: inline;
+	padding: 5px;
+}
+
+div.webButtons ul li a{
+	text-decoration: none;
+}
+
+div.webButtons ul li a img {
+	width: 88px;
+	transition: 0.5s;
+	position: initial;
+}
+div.webButtons ul li a img:hover {
+	width: 176px;
+	position: relative;
+	transition: 0.2s;
+}
