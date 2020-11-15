@@ -1,12 +1,13 @@
 table.links {
-	border: 1px solid white;
+	border: 1px solid rgba(255,120,220,.8);
 	margin-left: auto;
 	margin-right: auto;
 	display:block;
-	width: 50%;
+	width: 756px;
 }
-table.links td{
-	border: 1px solid white;
+table.links td,
+table.links th{
+	border: 1px solid rgba(125,200,255,.75);
 }
 
 table.links td{
@@ -15,26 +16,38 @@ table.links td{
 }
 table.links h3{
 	margin: 5px;
+	margin-top: 2px;
+	text-align: top;
+	float: top;
 }
 
 
 table.links a img{
-	border: 3px solid rgb(109, 109, 109);
+	border: 2px solid rgb(109, 109, 109);
 	display:block;
 	width: 200px;
 	height: 71px;
-	margin: auto;
-	filter: grayscale(100%);
-	border-image: none;
-	transition: 0.4s;
-	filter: brightness(75%) grayscale(100%) sepia(10%);
+	-webkit-transition: 0.4s;
+			transition: 0.4s;
+	-webkit-filter: brightness(75%) grayscale(100%) sepia(10%);
+			filter: brightness(75%) grayscale(100%) sepia(10%);
 }
 table.links a img:hover{
-	border: 3px solid transparent;
-	border-image: url("img/border.gif") 3 round;
-	-webkit-filter: brightness(100%) grayscale(0%) sepia(0%) hue-rotate(360deg) saturate(100%) contrast(1);
-	filter: brightness(100%) grayscale(0%) sepia(0%) hue-rotate(360deg) saturate(100%) contrast(1);
-	transition: 0.4s;
+	border: 2px outset rgba(255,90,120,.7);
+	border-image: url("img/border.gif") 2 round;
+	border-image-source: url("img/border.gif");
+	border-image-slice: 2;
+	border-image-width: 2px;
+	border-image-repeat: round;
+	-webkit-transition: 0.2s;
+			transition: 0.2s;
+	-webkit-filter: brightness(100%) grayscale(0%) sepia(0%) hue-rotate(360deg) saturate(130%) contrast(1);
+			filter: brightness(100%) grayscale(0%) sepia(0%) hue-rotate(360deg) saturate(130%) contrast(1);
+}
+
+table.links th{
+	padding: 8px;
+	text-align: justify;
 }
 
 img.main {
