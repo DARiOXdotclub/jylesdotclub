@@ -4,23 +4,27 @@ table.links {
 	margin-right: auto;
 	display:block;
 	width: 756px;
+	background-color: rgba(0,0,0,0.6)
 }
 table.links td,
 table.links th{
 	border: 1px solid rgba(125,200,255,.75);
+	vertical-align: top;
+}
+table.links tr{
+	height: 93px;
 }
 
 table.links td{
 	padding: 2px;
+	padding-left: 5px;
 	width: 100%;
 }
 table.links h3{
 	margin: 5px;
 	margin-top: 2px;
-	text-align: top;
-	float: top;
+	display: block;
 }
-
 
 table.links a img{
 	border: 2px solid rgb(109, 109, 109);
