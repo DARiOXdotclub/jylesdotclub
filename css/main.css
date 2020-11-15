@@ -1,12 +1,40 @@
 @import "links.css";
+@import url("88pxButtons.css");
+@import "fancyAnims.css";
+@import "footer.css";
+
+img{
+	image-rendering: crisp-edges;
+}
 
 body {
 	background-color: #030303;
 	color: #dfdfdf;
+	vertical-align: text-top;
+	text-align:left;
 }
 hr {
 	width: 70%;
 }
 .endPadding{
 	padding-bottom: 150px;
+}
+img.main{
+	position: absolute;
+	top: -35px;
+	left: calc(50% - 240px);
+}
+div.mainImageSpacer {
+	height: 220px;
+	width: 100%;
+}
+
+a {
+	color :#efefef;
+}
+a:hover {
+	font-weight: bold;
+}
+a:visited {
+	color: #cfa5fa;
 }
