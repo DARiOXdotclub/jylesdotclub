@@ -1,0 +1,10 @@
+iframe.updates {
+    border-color: #498f17;
+    height: 240px;
+    width: 50vw;
+    overflow-x: hidden;
+	overflow-y: scroll;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}

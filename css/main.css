@@ -2,6 +2,7 @@
 @import url("88pxButtons.css");
 @import "fancyAnims.css";
 @import "footer.css";
+@import "updates-iframe.css";
 
 img{
 	image-rendering: crisp-edges;
