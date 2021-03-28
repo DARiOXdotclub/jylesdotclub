@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx webpack --config webpack.config.js"
+    "test": "webpack --config webpack.config.js"
   },
   "author": "Jyles Coad-Ward [jyles@dariox.club] (https://jyles.club)",
   "license": "GPL-2.0",
