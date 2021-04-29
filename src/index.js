@@ -17,19 +17,39 @@ function getRandomItem(arr) {
 if (localStorage["jyles_subtitle"] == "true") {
 	var subtitleJSON = require("./subtitle.json");
 	var selection = getRandomItem(subtitleJSON);
+
+	$(".rand_subtitle").html(selection);
 }
 
 if (localStorage["jyles_music"] == "true") {
-	var noticeMSG = `
-<div class="allow_noise_msg"><strong>Jukebox Notice;</strong><br>
-If you are not using Google Chrome allow audio to be played from this website, thanks <3</div>
-	`;
 	var songDecision = getRandomItem(require("./songs.json"));
 	console.log("Selected Song;",songDecision);
+	
+	var SoundElement = new Audio("https://cdn.jyles.club/pageaudio/"+songDecision.file);
+	
+	SoundElement.audio = 0.2;
+
+	var AudioStatus = false;
+	$("div.AudioManagement span[action=CurrentSong").html(`<a href="${songDecision.link}">${songDecision.name}</a>`);
+	
+	console.log("Chose Audio '"+songDecision.name+"'",songDecision);
+
+	$("div.AudioManagement button[action=PlayPauseAudio").on('click',()=>{
+		if (AudioStatus)
+		{
+			SoundElement.pause();
+			console.log("Paused Audio");
+			AudioStatus = !AudioStatus;
+		} else {
+			SoundElement.play();
+			console.log("Resumed Audio");
+			AudioStatus = !AudioStatus;
+		}
+	});
 }
 
 
-    // Things for the coolio hover text shit
+// Things for the coolio hover text shit
 $("a").hover(function() {
     $("#hovertext").stop(true).fadeTo("fast", 1);
     document.getElementById("hovertext").innerHTML = $(this).attr('title');

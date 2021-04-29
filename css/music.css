@@ -1,17 +1,9 @@
-.music{
+.AudioManagement{
     color:white;
     z-index:99;
-    border-left: 2px solid white;
-    border-right: 2px solid white;
     position:absolute;
     top:15px;
     left:15px;
-}
-
-.allow_noise_msg{
-    width: 350px;
-    color: white;
-}
-audio{
-    z-index:98;
+    max-width: 50%;
+    min-width: 200px;
 }

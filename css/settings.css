@@ -24,7 +24,7 @@ a.show_settings:hover{
     top: 50px;
     left: 25%;
 }
-.settings_dialogue form li label{
+.settings_dialogue li label{
     color: white;
 }
 
