@@ -1,9 +1,42 @@
-.AudioManagement{
+.AudioManagement marquee{
     color:white;
-    z-index:99;
     position:absolute;
     top:15px;
-    left:15px;
-    max-width: 50%;
-    min-width: 200px;
+    left: 10vw;
+	right: 10vw;
+    width: 80vw;
+}
+.AudioManagement {
+    position:absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: fit-content;
+	z-index: 1000;
+}
+
+.AudioManagement input#volume-control {
+    vertical-align: top;
+    position: fixed;
+    top: 15px;
+	left: 5vw;
+}
+
+button[action=PlayPauseAudio] {
+    position: absolute;
+    
+    top: 60px;
+    right: calc(5vw - 14px);
+	
+	width: 32px;
+	height: 38px;
+    
+    font-size: 24pt;
+	
+	padding: 0;
+	border: none;
+	background: none;
+}
+button[action=PlayPauseAudio]:hover {
+	cursor:pointer;
 }

@@ -51,16 +51,16 @@
 
         </div>
         <div class="hovered_link" id="hovertext"></div>
-        <div class="notice">
+        <div class="notice" style="z-index: 1000;">
             By using this website you agree to the <a href="https://dariox.club/privacy.html">DARiOX Privacy Policy</a>
         </div>
 		<div class="AudioManagement">
             <marquee>Now Playing: <span action="CurrentSong"></span></marquee>
-            <button action="PlayPauseAudio">&#x23EF;</button>
+			<input type="range" id="volume-control" orient="vertical"  min="0" max="100" step="1" value="50">
+			<button action="PlayPauseAudio">&#x23EF;</button>
         </div>
         <a class="show_settings" id="show_settings" title="Settings" onclick="toggleSettings()"><li class="fas fa-sliders-h"></li></a>
         <div class="settings">
-            <div id="settings_background"></div>
             <div class="settings_dialogue">
 				<li><input type="checkbox" name="music"><label for="music">Enable Music</label></li>
 				<li><input type="checkbox" name="subtitle"><label for="subtitle">Show Subtitle</label></li>

@@ -4,7 +4,7 @@ a.show_settings{
     color:white;
     position:absolute;
     top:15px;
-    right:15px;
+    right: calc(5vw - 12pt);
 	z-index: 9999;
 }
 a.show_settings:hover{
@@ -23,9 +23,14 @@ a.show_settings:hover{
     position:absolute;
     top: 50px;
     left: 25%;
+	
+	display: none;
 }
 .settings_dialogue li label{
     color: white;
+}
+.settings_dialogue li {
+	list-style: none;
 }
 
 

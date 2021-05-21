@@ -1,8 +1,6 @@
 const $ = require("jquery");
 
-
-$(".settings_dialogue").hide();
-$(".settings_background").hide();
+localStorage.jyles_music_volume = localStorage.jyles_music_volume || '0.6';
 
 function getRandomItem(arr) {
 	// get random index value
@@ -21,20 +19,22 @@ if (localStorage["jyles_subtitle"] == "true") {
 	$(".rand_subtitle").html(selection);
 }
 
+$("input#volume-control").val(parseFloat(localStorage.jyles_music_volume)*100);
+
 if (localStorage["jyles_music"] == "true") {
 	var songDecision = getRandomItem(require("./songs.json"));
 	console.log("Selected Song;",songDecision);
 	
 	var SoundElement = new Audio("https://cdn.jyles.club/pageaudio/"+songDecision.file);
 	
-	SoundElement.audio = 0.2;
+	SoundElement.volume = parseFloat(localStorage.jyles_music_volume);
 
 	var AudioStatus = false;
 	$("div.AudioManagement span[action=CurrentSong").html(`<a href="${songDecision.link}">${songDecision.name}</a>`);
 	
 	console.log("Chose Audio '"+songDecision.name+"'",songDecision);
 
-	$("div.AudioManagement button[action=PlayPauseAudio").on('click',()=>{
+	$("button[action=PlayPauseAudio").on('click',()=>{
 		if (AudioStatus)
 		{
 			SoundElement.pause();
@@ -46,13 +46,18 @@ if (localStorage["jyles_music"] == "true") {
 			AudioStatus = !AudioStatus;
 		}
 	});
+	
+	$("input#volume-control").on('change',(e)=>{
+		SoundElement.volume = e.currentTarget.value / 100;
+		localStorage.jyles_music_volume = SoundElement.volume;
+	})
 }
 
 
 // Things for the coolio hover text shit
 $("a").hover(function() {
     $("#hovertext").stop(true).fadeTo("fast", 1);
-    document.getElementById("hovertext").innerHTML = $(this).attr('title');
+    document.getElementById("hovertext").innerHTML = $(this).attr('title') || '<!-- -->';
 }, function() {
     $("#hovertext").stop(true).fadeTo("slow", 0);
 });
@@ -63,13 +68,11 @@ $("#show_settings").on('click',()=>{
 	if (settingsPopup) {
 		settingsPopup = false;
 		$("#show_settings").html(`<li class="fas fa-sliders-h"></li>`);
-		$(".settings_dialogue").fadeOut("fast");
-		$(".settings_background").fadeOut("fast");
+		$(".settings").fadeOut("fast");
 	} else {
 		settingsPopup = true;
 		$("#show_settings").html(`<i class="fas fa-times"></i>`)
-		$(".settings_dialogue").fadeIn("fast");
-		$(".settings_background").fadeIn("fast");
+		$(".settings").fadeIn("fast");
 	}
 })
 
