@@ -7,8 +7,10 @@ a.show_settings{
     right: calc(5vw - 12pt);
 	z-index: 9999;
 }
-a.show_settings:hover{
+a.show_settings:hover,
+button[action=PlayPauseAudio] {
     color: #8eeda8;
+	transition: 300ms;
 }
 
 

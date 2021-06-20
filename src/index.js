@@ -19,6 +19,10 @@ if (localStorage["jyles_subtitle"] == "true") {
 	$(".rand_subtitle").html(selection);
 }
 
+$('input[type=range]').on('input', function () {
+	$(this).trigger('change');
+});
+
 $("input#volume-control").val(parseFloat(localStorage.jyles_music_volume)*100);
 
 if (localStorage["jyles_music"] == "true") {
@@ -37,16 +41,18 @@ if (localStorage["jyles_music"] == "true") {
 	$("button[action=PlayPauseAudio").on('click',()=>{
 		if (AudioStatus)
 		{
+			$("[action=PlayPauseAudio]").html(`<i class="fas fa-play"></i>`);
 			SoundElement.pause();
 			console.log("Paused Audio");
 			AudioStatus = !AudioStatus;
 		} else {
+			$("[action=PlayPauseAudio]").html(`<i class="fas fa-pause"></i>`);
 			SoundElement.play();
 			console.log("Resumed Audio");
 			AudioStatus = !AudioStatus;
 		}
 	});
-	
+
 	$("input#volume-control").on('change',(e)=>{
 		SoundElement.volume = e.currentTarget.value / 100;
 		localStorage.jyles_music_volume = SoundElement.volume;
@@ -68,11 +74,11 @@ $("#show_settings").on('click',()=>{
 	if (settingsPopup) {
 		settingsPopup = false;
 		$("#show_settings").html(`<li class="fas fa-sliders-h"></li>`);
-		$(".settings").fadeOut("fast");
+		$(".settings_dialogue").fadeOut("fast");
 	} else {
 		settingsPopup = true;
 		$("#show_settings").html(`<i class="fas fa-times"></i>`)
-		$(".settings").fadeIn("fast");
+		$(".settings_dialogue").fadeIn("fast");
 	}
 })
 
