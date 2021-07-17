@@ -31,17 +31,8 @@
             <!-- projects 
                 <a href="https://jyles.club/projects" title="Projects"><i class="fas fa-code-branch"></i></a>-->
 
-            <!-- Open Directory
-                <a href="http://share.jyles.club" title="Open Directory" id="opendir"><i class="fas fa-hdd"></i></a> -->
-
-			<!-- Internet Radio
-				<a href="http://radio.jyles.club" title="Internet Radio"><i class="fas fa-broadcast-tower"></i></a>-->
-
             <!-- Donate 
                 <a href="https://jyles.club?donate" title="Donate"><i class="fab fa-paypal"></i></a>-->
-
-			<!-- Discord Bot 
-				<a href="https://seedbot.xyz" title="Discord Bot"><i class="fas fa-robot"></i></a>-->
 
 			<!-- DARiOX -->
 				<a href="https://dariox.club" title="DARiOX"><i class="fas fa-users"></i></a>
@@ -54,10 +45,11 @@
         <div class="notice" style="z-index: 1000;">
             By using this website you agree to the <a href="https://dariox.club/privacy.html">DARiOX Privacy Policy</a>
         </div>
-		<div class="AudioManagement">
+		<div class="AudioManagement" requires="jyles_music">
             <marquee>Now Playing: <span action="CurrentSong"></span></marquee>
 			<input type="range" id="volume-control" orient="vertical"  min="0" max="100" step="1" value="50">
-			<button action="PlayPauseAudio" style="color:white;"><i class="fas fa-play"></i></button>
+			<button action="PlayPauseAudio" style="color:white;" title="Play/Pause"><i class="fas fa-play"></i></button>
+            <button action="NewAudio" style="color: white;" title="New Track"><i class="fas fa-sync"></i></button>
         </div>
         <a class="show_settings" id="show_settings" title="Settings"><li class="fas fa-sliders-h"></li></a>
         <div class="settings">
