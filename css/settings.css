@@ -11,6 +11,7 @@ a.show_settings:hover,
 button[action=PlayPauseAudio] {
     color: #8eeda8;
 	transition: 300ms;
+    cursor: pointer;
 }
 
 
